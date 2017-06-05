@@ -574,6 +574,7 @@ class Admin_OrderController extends Zend_Controller_Action
                 $msg = "订单确认失败，请联系管理员 [订单号：{$batchSN}]";
             } else {
                 $url = $this -> getFrontController() -> getBaseUrl() . '/admin/order/confirm-list/';
+                $this -> _api -> send_union_pay($batchSN);
                 $msg = '订单收款成功';
             }
         }

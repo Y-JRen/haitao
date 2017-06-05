@@ -5106,4 +5106,124 @@ class Admin_Models_API_Order
 	        return false;
 	    }
 	}
+	
+	function send_union_pay($batchSN)
+	{
+		$order = array_shift($this -> getOrderBatch(array('batch_sn' => $batchSN)));
+	    $evn = 'test';
+	    if ($env == 'test') {
+	    	// test
+	    	$host = "111.203.189.205";
+	    	$port = 6001;
+	    	$MerID = '0P3';
+	    	$MerNo = '002172785100010';
+	    	$PayNo = '0P3000000000000';
+	    } else {
+	    	// product
+	    	$host = "";
+	    	$port = 0;
+	    	$MerID = 'BZZ';
+	    	$MerNo = '';
+	    	$PayNo = 'BZZ000000000000';
+	    }
+	    $data = array (
+	    		'msgtype' => 0100, // 信息类型 定值 非空 定值：0100
+	    		'procode' => 350000, // 处理码 定值 非空 定值：350000
+	    		'MerID' => $MerID, // 商户ID String(3) 非空 （银联网络分配3位定值）（注意与MerNo不同）
+	    		                   // 测试环境（定值）：0P3
+	    		                   // 生产环境（定值）：BZZ
+	    		'OrderNo' => '', // 客户系统流水号 String(20) 非空 客户系统生成
+	    		'sysno' => '000000000000', // 银联支付单号 String(30) 非空 定值：000000000000（12位）
+	    		'cardno	' => '', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
+	    		'traceno' => '', // 银联需求流水号 String(6) 非空 客户随机生成（6位长度，保证当天不唯一即可）
+	    		'termid' => '00904044', // 终端号 String(8) 非空 银联分配给客户（定值）
+	    		'CurrCode' => '142', // 海关货币代码 String(3) 非空 海关货币代码(一般RMB为：142)
+	    		
+	    		'CurrCodeCIQ' => '156', // 国检货币代码 String(3) 非空 国检货币代码（一般RMB为：156）
+	    		'PayAmount' => sprintf ( "%012d", '' ), // 交易金额 String(12) 非空
+	    		                                        // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
+	    		'MerNo' => $MerNo, // 商户号 String(15) 非空 银联网络分配给客户的商户号（15位定值）
+	    		'RealName' => '', // 持卡人真实姓名 String(16) 非空
+	    		'CredentialsType' => '', // 证件类型 String(2) 非空 01：身份证；
+	    		                         // 02：军官证；
+	    		                         // 03：护照；
+	    		                         // 04: 回乡证；
+	    		                         // 05: 台胞证；
+	    		                         // 06: 警官证；
+	    		                         // 07: 士兵证；
+	    		'CredentialsNo' => '', // 证件号码 String (18) 非空
+	    		'ShoppingDate' => date('Ymd',$order['pay_time']), // 订单交易（支付）日期 String(8) 非空 YYYYMMDD
+	    		'InternetDomainName' => '', // 电商平台互联网域名 String(512) 非空 电商平台的互联网域名。
+	    		                            // 以海关发布的对接电商平台域名列表为准。
+	    		'ECommerceCode' => '', // 电商平台编号（海关） String(20) 非空
+	    		                       // 在海关通关系统中备案的平台企业编号或代码
+	    		'ECommerceName' => '', // 电商平台名称(海关) String(48) 非空 在海关通关系统中备案的平台企业名称
+	    		'MerCode' => '', // 交易商家编号（海关） String(20) 非空
+	    		                 // 在海关通关系统中备案的平台企业下入驻商户的编号或代码。如果没有则填ECommerceCode电商平台编号
+	    		'MerName' => '', // 交易商家名称（海关） String(48) 非空
+	    		                 // 在海关通关系统中备案的平台企业下入驻商户的编号或代码。如果没有则填ECommerceName电商平台名称
+	    		'CbepComCode' => '', // 跨境电商平台企业备案号（国检） String(20) 非空
+	    		                     // 跨境电商平台企业在国检关口做企业备案，审核通过后的企业备案号
+	    		'CbepComName' => '', // 跨境电商平台企业备案名称（国检） String(48) 非空
+	    		                     // 跨境电商平台企业在国检关口做企业备案，审核通过后的企业备案名称
+	    		'CbepMerCode' => '', // 跨境电商交易商家备案号（国检） String(20) 非空
+	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案号，如果没有则填CbepComCode跨境电商平台企业备案号（国检）
+	    		'CbepMerName' => '', // 跨境电商交易商家备案名称（国检） String(48) 非空
+	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案名称，如果没有则填CbepComNam跨境电商平台企业备案名称（国检）
+	    		'GoodsAmount' => '', // 货款 String(12) 非空
+	    		                     // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
+	    		'TaxAmount' => sprintf ( "%012d", $order['tax']*100 ), // 税款 String(12) 非空
+	    		                   // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
+	    		'Freight' => sprintf ( "%012d", $order['price_logistic']*100 ), // 运费 String(12) 非空
+	    		                 // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
+	    		'InsuredFee' => '', // 保费 String(12) 非空
+	    		                    // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
+	    		'Mobile' => '', // 银行预留手机号码 String(11) 可空
+	    		'Email' => '', // 持卡人常用邮箱 String(32) 可空
+	    		'BizTypeCode' => '', // 业务类型 String(2) 非空 直购进口：1
+	    		                     // 网购保税进口：2
+	    		'OriOrderNo' => $order['batch_sn'], // 商户自己系统原订单号 String(20) 非空 商户自己系统的原订单号
+	    		'PayNo' => $PayNo, // 校验值 String(20) 非空 校验值（我司会做校验）：
+	    		                   // 生产环境（定值）：
+	    		                   // “BZZ000000000000”
+	    		                   // 测试环境（定值）：
+	    		                   // “0P3000000000000”
+	    		'PaymentType' => 0, // 款项类型 String(1) 非空 0：全款
+	    		                    // 1：货款
+	    		                    // 2：运费
+	    		'IEType' => 'E', // 进出口类型 String(1) 非空 I：进口
+	    		                 // E：出口
+	    		'OrganType' => '', // 机构类型 String(1) 非空 0：海关、国检都推送
+	    		                   // 1：只推送海关
+	    		                   // 2：只推送国检
+	    		'CustomsCode' => '', // 海关平台代码 String(6) 非空 详见CustomsCode参数说明
+	    		'PortCode' => '', // 口岸代码 String(4) 非空 详见海关关口代码表
+	    		'CIQOrgCode' => '', // 检验检疫机构代码 String(8) 非空 详见国检机构代码表
+	    		'BusinessType' => '', // 业务类型 String(10) 非空 B2B2C或B2C
+	    		'CreTime' => '', // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
+	    		'GetResultTime' => '',  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
+	    );
+	    
+	    $xml_model = new Custom_Model_Xml ();
+	    $xml_data = $xml_model->array2xml ( $data, 'BODY' );
+	    
+	    $params = '<?xml version="1.0" encoding="gbk"?>
+	    <PACKAGE>
+	    ' . $xml_data . '
+	    </PACKAGE>';
+	    
+	    
+	    $base_len = 6;
+	    
+	    $socket = socket_create ( AF_INET, SOCK_STREAM, SOL_TCP ) or die ( "Could not create    socket\n" ); // 创建一个Socket
+	    $connection = socket_connect ( $socket, $host, $port ) or die ( "Could not connet server\n" ); // 连接
+	    socket_write ( $socket, $params, strlen ( $params ) ) or die ( "Write failed\n" ); // 数据传送
+	    $ext_len = socket_read ( $socket, $base_len );
+	    $output = socket_read ( $socket, $base_len + $ext_len );
+	    socket_close ( $socket );
+	    
+	    $xml_model->xml2array($output);
+	    //
+	    $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
+	} 
 }
