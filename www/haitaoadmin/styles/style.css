@@ -1,0 +1,657 @@
+@import url('dtree.css');
+@import url('tab.css');
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	text-align: left;
+	color: #000;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+table, td, div {
+	text-align: left;
+	font: normal 12px Verdana, "Times New Roman", Times, serif;
+}
+
+img {
+	border: 0px;
+	vertical-align: middle;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+a:link {
+	font: 12px Verdana;
+	color: #333;
+	text-decoration: none;
+}
+
+a:visited {
+	font: 12px Verdana;
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f30;
+	text-decoration: underline;
+}
+
+a:active {
+	font: 12px Verdana;
+	color: #333;
+	text-decoration: none;
+}
+
+#header {
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background: url(/haitaoadmin/images/top_bg.jpg) repeat-x top;
+	overflow: hiddden;
+}
+
+#header_logo {
+	float: left;
+	width: 200px;
+	height: 70px;
+	text-align: left;
+	background: url(/haitaoadmin/images/top_logo.jpg) no-repeat;
+	clear: both;
+}
+
+#header_notice {
+	margin: 0;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	padding-left: 5px;
+}
+
+#header_loading {
+	margin: 3px 20px;
+	float: left;
+	text-align: left;
+	padding: 2px 8px;
+	border: 1px solid #ccc;
+	background: #F9F9F9;
+	overflow: hidden;
+}
+
+#header_top {
+	float: right;
+	height: 32px;
+	line-height: 32px;
+	padding-right: 15px;
+}
+
+#header_menu {
+	margin: 0 auto;
+	height: 38px;
+	text-align: left;
+	clear: right;
+}
+
+#header_menu ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	display: inline;
+}
+
+#header_menu ul li {
+	float: left;
+	margin: 0 3px;
+	width: 82px;
+	text-align: center;
+	padding-top: 14px;
+	height: 18px;
+	background: #f6f9fd url(/haitaoadmin/images/menu_bg.gif) no-repeat 0 8px;
+}
+
+#header_menu a {
+	text-decoration: none;
+	text-align: center;
+	color: #b30e00;
+}
+
+#header_menu a:hover {
+	color: #364b63;
+}
+
+#header_menu .menu_selected {
+	background: url(/haitaoadmin/images/menu_bg_s.gif) no-repeat;
+	color: #fff;
+	margin: 0 3px;
+	padding: 11px 0 0;
+	width: 91px;
+	height: 38px;
+	border: 0px solid #2f4668;
+}
+
+#header_menu .menu_selected a, #header_menu .menu_selected a:hover {
+	color: #fff;
+	font-weight: bold;
+	font-size: 10.5pt;
+}
+
+#menutop {
+	width: 200px;
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+	left: 0;
+	background: #f6f9fd;
+	height: 35px;
+	text-align: right;
+	background: url(/haitaoadmin/images/menu_top.gif) repeat-x;
+}
+
+#position {
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+	left: 200px;
+	right: 0;
+	border-left: 1px solid #9db3c5;
+	background: url(/haitaoadmin/images/mbg.gif) repeat-x;
+	text-align: left;
+	height: 35px;
+	line-height: 35px;
+	padding: 0;
+}
+
+#position img {
+	vertical-align: middle;
+}
+
+#nav {
+	float: left;
+	text-indent: 10px;
+	text-align: left;
+	padding-top: 8px;
+}
+
+#help {
+	float: right;
+	padding: 8px 15px 0;
+	width: 260px;
+	text-align: right;
+	overflow: hidden;
+}
+
+#menu_iframe {
+	width: 218px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#main_iframe {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: 100%;
+	height: 100%;
+}
+
+#admin_left {
+	width: 200px;
+	position: absolute;
+	top: 105px;
+	bottom: 0;
+	left: 0;
+	background: #f6f9fd;
+}
+
+#admin_right {
+	position: absolute;
+	top: 105px;
+	bottom: 0;
+	left: 200px;
+	right: 0;
+	border-left: 1px solid #9db3c5;
+}
+
+#admin_left .inner, #admin_right .inner {
+	height: 100%;
+}
+
+#menu-list {
+	padding: 0;
+	margin: 2px 0px 2px 2px;
+	font-weight: bold;
+	list-style-type: none;
+}
+
+#menu-list ul {
+	padding: 0;
+	margin: 0;
+	line-height: 20px;
+	list-style-type: none;
+	color: #b30e00;
+}
+
+#menu-list li {
+	padding: 0;
+	text-indent: 24px;
+	padding-top: 3px;
+	color: #333;
+}
+
+#menu-list .explode {
+	background: url(/haitaoadmin/images/expand.gif) no-repeat 0px 3px;
+	line-height: 30px;
+	font-weight: bold;
+	margin: 2px 5px 2px 2px;
+	color: #333;
+	cursor: pointer;
+}
+
+#menu-list .collapse {
+	background: url(/haitaoadmin/images/collapse.gif) no-repeat 0px 3px;
+	line-height: 30px;
+	font-weight: bold;
+	margin: 2px 5px 2px 2px;
+	color: #333;
+	cursor: pointer;
+}
+
+#menu-list .menu-item {
+	font-weight: normal;
+}
+
+#menu-list .menu-item a {
+	text-indent: 30px;
+}
+
+#submenu-list li {
+	padding-left: 10px;
+}
+
+#submenu-list ul li {
+	padding-left: 0px;
+}
+
+#submenu-list .explode {
+	background: url(/haitaoadmin/images/tree_expand.gif) no-repeat 15px 3px;
+	line-height: 20px;
+	font-weight: bold;
+	margin: 2px 5px 2px 2px;
+	color: #333;
+	cursor: pointer;
+}
+
+#submenu-list .collapse {
+	background: url(/haitaoadmin/images/tree_collapse.gif) no-repeat 15px 3px;
+	line-height: 20px;
+	font-weight: bold;
+	margin: 2px 5px 2px 2px;
+	color: #333;
+	cursor: pointer;
+}
+
+#myForm .errorMessage {
+	color: #C01920;
+	margin-left: 10px;
+}
+
+#showimgs {
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+}
+
+#showimgs li {
+	float: left;
+	padding-right: 5px;
+	height: 150px;
+	width: 120px;
+	list-style-type: none;
+	text-align: left;
+	overflow: hidden;
+}
+
+#showimgs li img {
+	width: 90px;
+	height: 90px;
+}
+
+input[type="text"], input[type="password"], input[type="textarea"], input[type="file"], textarea {
+	font-size: 12px;
+	padding: 2px;
+	border: 1px solid;
+	border-color: #666 #ccc #ccc #666;
+	background: #F9F9F9;
+	color: #333;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="textarea"]:focus, textarea:focus {
+	background-color: lightyellow;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], input[type="image"] {
+	margin: 3px;
+	padding: 2px 5px;
+	*padding: 3px 5px 0;
+	border: 1px solid;
+	border-color: #ddd #666 #666 #ddd;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.input-text {
+	border: 1px solid;
+	border-color: #777777 #CCCCCC #CCCCCC #777777;
+	background-color: white;
+	padding: 2px 1px;
+}
+
+.input-text-focus {
+	background-color: lightyellow !important;
+}
+
+.page_nav {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title {
+	margin: 0;
+	padding: 5px;
+	font: bold 12px Verdana;
+	color: #b30e00;
+}
+
+.content {
+	margin: 0;
+	padding: 10px 0;
+	background: #fff;
+	border-top: 4px solid #b30e00;
+}
+
+.search {
+	margin: 0;
+	padding: 10px;
+	background: #f2f2f2;
+	border: 4px solid #cccccc;
+}
+
+.search .line {
+	clear: both;
+	margin: 5px 0;
+	width: 100%;
+}
+
+.search input[type="submit"], .search input[type="reset"], .search input[type="button"] {
+	background: #b30e00;
+	color: #ffffff;
+}
+
+.head {
+	float: left;
+	margin: 0 auto;
+	width: 100%;
+	background: url(/haitaoadmin/images/table_thead.gif) repeat-x;
+}
+
+.head li {
+	float: left;
+	list-style-type: none;
+	padding: 3px 5px;
+	height: 22px;
+	line-height: 22px;
+	color: #333;
+	font-weight: bold;
+}
+
+.list {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+}
+
+.list li, .list_selected li {
+	float: left;
+	list-style-type: none;
+	padding: 3px 5px;
+	color: #333;
+	padding: 3px 5px;
+	height: 22px;
+	line-height: 22px;
+}
+
+.list:hover {
+	background-color: #F2F2F2;
+}
+
+.list_selected {
+	float: left;
+	width: 100%;
+	background-color: #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.sub_list {
+	float: left;
+	width: 100%;
+	background-color: #f6f9fd;
+	border-bottom: 1px solid #eee;
+}
+
+.submit {
+	text-align: center;
+	background-color: #fff;
+}
+
+.sub_title {
+	padding: 5px;
+	margin-bottom: 1px;
+	background: #fff;
+}
+
+.table {
+	clear: both;
+	width: 100%;
+	text-align: center;
+}
+
+.table thead tr {
+	background: #eee;
+}
+
+.table thead th, .table thead td, .catTree thead td {
+	padding: 2px 10px;
+	height: 22px;
+	line-height: 22px;
+	color: #333;
+	text-align: left;
+	font-weight: normal;
+	background: #eee;
+}
+
+.table thead .sort {
+	background: #eee url(/haitaoadmin/images/icon-table-sort.png) no-repeat 2px 8px;
+}
+
+.table thead .nosort {
+	background: #eee url();
+}
+
+.table thead .sortedASC {
+	background: #eee url(/haitaoadmin/images/icon-table-sort-asc.png) no-repeat 1px 4px;
+}
+
+.table thead .sortedDESC {
+	background: #eee url(/haitaoadmin/images/icon-table-sort-desc.png) no-repeat 1px 8px;
+}
+
+.table tbody td {
+	padding: 3px 10px;
+	color: #333;
+	line-height: 150%;
+	background-color: #FFF;
+	border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:hover td {
+	background-color: #fffdd7;
+}
+
+.cat_tree_tr:hover td {
+	background-color: #eee;
+}
+
+.table_form {
+	clear: both;
+	background: #eee;
+	text-align: left;
+	width: 100%;
+}
+
+.table_form tbody td {
+	padding: 5px;
+	color: #333;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	line-height: 150%;
+}
+
+.table_form tbody .desc, .table_form tbody .desc a {
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.tree_div  tbody td {
+	padding: 0px;
+	border: 0px;
+	background-color: #f5f5f5;
+}
+
+.alpha {
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+}
+
+.notice {
+	display: none;
+	color: #666;
+}
+
+.login_main {
+	margin: 0 auto;
+	position: relative;
+	width: 300px;
+	border: 1px solid #dcdcdc;
+	padding: 1px;
+}
+
+.login_box {
+	width: 300px;
+	height: 135px;
+	padding-top: 5px;
+}
+
+.login_box li {
+	line-height: 210%;
+	height: 30px;
+	padding-left: 50px;
+}
+
+.auth-image {
+	vertical-align: bottom;
+	cursor: hand;
+}
+
+.cat_select ul {
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	clear: both;
+	list-style: none
+}
+.cat_select li {
+	line-height: 18px;
+	float: left;
+	vertical-align: bottom;
+	width: 50%
+}
+.cat_select input {
+	height: 12px
+}
+
+/* 从原文件not-confirm-info.tpl中保存到这个文件来  by_jonirenicus 09.4.14 !F.U.C.K IE! */
+
+.dotline {
+	border-bottom-color: #666666;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+
+/* 表格100%宽度 td th 控制行间距 by_jonirenicus 09.4.14 !F.U.C.K IE! */
+/*
+ table {width:100%;color: #666;}
+ td,th {padding: 3px 0 3px 2px;}
+ */
+
+.tbl-list {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tbl-list thead th {
+	background: #eee;
+	font-weight: normal;
+	padding: 3px;
+	height: 20px;
+	line-height: 20px;
+}
+
+
+/**/
+.bubble{
+background: none repeat scroll 0 0 #ccc;
+position:absolute;
+top:0;
+left:0;
+z-index:100000;
+}
+#bubbleFont{
+padding:2px 2px;
+border: 1px solid #EEEEEE;
+display:block;
+line-height:30px;
+color:#000;
+font-family:Arial, Helvetica, sans-serif;
+float:left;
+overflow:hidden;
+}
+
+#index_admin_left .dtree *{line-height:25px;}
+.index_head .index_head-nav li a{display:block;position:relative;font-size:15px;font-family:"微软雅黑";line-height:36px}
+.index_head .index_head-nav li .index_head-nav-on{ background:url(/haitaoadmin/images/button-hover.jpg) no-repeat; text-decoration:none; color:#FFF; width:68px;height:43px;top:-8px;line-height:52px;color:#900;font-weight:bold;}
+.index_head .index_tips-right a{ color:#FFF;font-family:"微软雅黑";}
+.index_head .index_menu-right span a{font-family:"宋体"}

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+.wh200 { width: 200px; height: 200px; }
+.verticalPic { text-align: center; display: table-cell; vertical-align: middle; overflow: hidden; }
+.verticalPic a { height: 100%\9; writing-mode: tb-rl\9; }
+.verticalPic img { vertical-align: middle; }
+.wrap { width: 1200px; margin: 0 auto; }
+.adv1200 { margin-top: 0px; width: 1200px; overflow: hidden; }
+.giantCheap_menu { border-bottom: #e94d03 2px solid; margin-top: 15px; height: 33px; }
+.step { width: 737px; height: 33px; margin: auto; }
+.step, .step2, .step3, .ste4 { background: url(../images/giantCheap_ui.png) no-repeat; height: 33px; }
+.step2 { background-position: 0 -33px; }
+.step3 { background-position: 0 -66px; }
+.step4 { background-position: 0 -99px; }
+.step li { float: left; }
+.step li a { display: block; height: 33px; }
+.tab1 { width: 197px; }
+.tab2 { width: 180px; }
+.tab3 { width: 180px; }
+.tab4 { width: 180px; }
+.giantlist { width: 1200px; }
+h1.t1, h1.t2, h1.t3 { background: url(../images/giantCheap_h1title.png) no-repeat; height: 68px; margin-top: 28px; }
+h1.t2 { background: url(../images/giantCheap_h1title2.png) no-repeat; }
+h1.t3 { background: url(../images/giantCheap_h1title3.png) no-repeat; }
+.giantlist .advbox { margin-top: 30px; height: 160px; }
+.giantlist .advbox a { float: left; display: inline; margin-left: 10px; width: 480px; height: 160px; overflow: hidden; }
+.product { }
+.product li { float: left; display: inline; margin: 40px 4px 0 7px; width: 318px; height: 394px; }
+.product li .pic { width: 200px; height: 200px; margin: auto; }
+.product li .name { line-height: 24px; height: 48px; margin: 8px 0 8px 20px; overflow: hidden; }
+.product li .name a { color: #f60; font-size: 14px; font-weight: bold; }
+.product li .buybox { background: url(../images/giantCheap_ui.png) no-repeat 0 -135px; height: 59px; }
+.product li .buybox .price { float: left; display: inline; margin: 15px 0 0 15px; color: #fff; font-size: 18px; font-family: microsoft yahei; }
+.product li .buybox .price span { font-size: 24px; }
+.buynow { float: right; display: inline; margin: 15px 15px 0 0; }
+.buynow a { display: block; width: 95px; height: 30px; text-indent: -999em; }
+.product li .disc { background: #f5f0df; margin-left: 5px; height: 64px; }
+.product li .disc span { float: left; display: inline; width: 103px; line-height: 24px; padding-top: 5px; text-align: center; font-size: 13px; color: #666; font-family: 宋体; }
+.product li .disc span em { font-style: normal; font-size: 12px; }
+.product li .disc b { color: #f60; font-weight: normal; }
+#zqj_box { width: 980px; margin: 0 auto; }
+.left_bg1 { background: url(/images/left.jpg) no-repeat; width: 296px; height: 260px; position: absolute; margin: 0 0 0 -254px; }
+.right_bg1 { background: url(/images/right.jpg) no-repeat; width: 282px; height: 260px; position: absolute; margin: 0 0 0 963px; }
+#hotwords span, #hotwords strong, .crumb, .crumb a, .logoimg h1 { color: #fff; }
+.crumb h2, .crumb h2 a, #footer .links a, #footer .links span, #footer .copyright { color: #fff !important; }

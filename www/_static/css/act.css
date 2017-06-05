@@ -1,0 +1,84 @@
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0; padding:0;}
+body{font-size:12px; font-family:"宋体",Simsun; line-height:2em;}
+table{border-collapse:collapse; border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,i{ font-style:normal; font-weight:normal;}
+ol,ul,li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;}
+input{outline:none} 
+a:focus{outline:none;}
+a {text-decoration:none; color:#544B3C;}
+a:hover{text-decoration:underline;}
+button{overflow:visible;cursor:pointer}
+table{empty-cells:show;border-collapse:collapse; border-spacing:0;}
+th,td{border-collapse:collapse;}
+
+/*文字排版*/
+.f12{font-size:12px;}
+.f13{font-size:13px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f20{font-size:20px;}
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.t2{text-indent:2em;}
+.unl{ text-decoration:underline;}
+.no_unl{text-decoration:none;}
+
+
+/*定位*/
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.bc{margin-left:auto; margin-right:auto;}
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:right;}
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{display:inline-block}
+.clearfix{display:block;}
+.vm{vertical-align:middle;}
+.pr{position:relative;}
+.pa{position:absolute;}
+.zoom{zoom:1;}
+.show{ display:block;}
+.none{display:none;}
+.hidden{ visibility:hidden;}
+.clear{ clear: both;height: 0;font: 0/0 Arial;visibility: hidden;}
+.w980{width:980px;}
+.font_red{ color:#f00;}
+/*117go html*/
+html{ overflow-x:hidden;}
+.iconbg{ background:url(../images/act/iconbg.png) no-repeat;_background:url(../images/act/iconbg.gif) no-repeat;}
+.btn{ background:url(../images/act/button.gif) no-repeat;}
+span.star{ display:block; width:20px; height:20px; background-position:0 -350px; position:absolute; bottom:-5px; right:-5px; z-index:1000;}
+span.jingpin{ display:block; width:56px; height:56px; position:absolute; top:-2px; right:-5px;background-position:0 -840px;}
+span.hot{display:block; width:56px; height:56px; position:absolute; top:-2px; right:-5px; background-position:0 -900px;}
+.el{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+
+/* CSS Document */
+.dapei{ width:100%; overflow:hidden; background:#f4fbdc;}
+.dapei .main{ width:990px; margin:0 auto 80px; overflow:hidden;}
+.dapei .main .top{ width:990px; overflow:hidden; }
+.dapei .main .list{ width:990px; overflow:hidden; background:#1989e0; margin:8px 0 10px;}
+.dapei .main .list02{ padding:8px 0 0; margin-top:0;}
+.dapei .main .list .title{ width:990px; height:63px; background:url(../images/act/bg_title.jpg) no-repeat; font-family:"微软雅黑";}
+.dapei .main .list .title h2{ float:left; display:block; width:160px; text-align:center; margin-left:60px; color:#ffffff; font-size:16px; padding:10px 0 0;}
+.dapei .main .list .title span{ float:left; display:block; width:680px;  margin-left:45px; color:#fff; font-size:14px; padding:10px 0 0; }
+.dapei .main ul{ width:966px; overflow:hidden; padding:5px 12px 10px; border-bottom:1px solid #8dc5de; }
+.dapei .main ul li{ width:480px; height:205px; border:1px solid #72b7e3; background:#fffeec; margin:0 0 7px;}
+.dapei .main ul li .p_img{ float:left; width:210; height:210px;}
+.dapei .main ul li .p_info{ float:left; width:230px; height:210px; background:#f5eabf; padding:0 0 0 10px;font-family:"微软雅黑";}
+.dapei .main ul li .p_info .p_name,.dapei .main ul li .p_info .p_price{ color:#434343; font-size:13px;  margin:10px 0 0; line-height:3em;}
+.dapei .main ul li .p_info .p_gn{ position:relative; left:-13px; width:214px; height:54px; padding:0 0 0 13px; background:url(../images/act/bg_gn.png) no-repeat; color:#ffffff; font-size:16px; line-height:4px; font-weight:bold;}
+.dapei .main ul li .p_info .p_price{ margin:0; line-height:2.2em;}
+.dapei .main ul li .p_info .p_price span{ color:#e49703;}
+.dapei .main ul li .p_info .p_price span b{ font-size:30px;}
+.dapei .main ul li .p_info .p_btn{ float:right; margin:13px 10px 0 0;}

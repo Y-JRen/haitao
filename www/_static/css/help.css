@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+.helpCenter{ width:990px; overflow:hidden; margin:0 auto;}
+.helpCenter .subnav{ color:#666666}
+.helpCenter .subnav a{ color:#666666}
+.helpCenter .help_menu{ float:left; width:220px; overflow:hidden;}
+.helpCenter .help_menu dl{ width:218px; overflow:hidden; border:1px solid #dddddd;}
+.helpCenter .help_menu dt{ width:218px; height:30px; background:#4295e9; color:#ffffff; font-family:"微软雅黑"; font-size:16px; line-height:30px; border-bottom:1px solid #ddd;}
+.helpCenter .help_menu dt i{ float:left; display:block; width:14px; height: 14px; background:url(../_static/images/icon.jpg) no-repeat; margin:8px 11px 0 11px;}
+.helpCenter .help_menu dd{ width:172px; height:26px; border-bottom:1px dashed #ddd; padding-left:25px; margin:0 auto; line-height:26px;}
+.helpCenter .help_menu dd.last{ border-bottom:0;}
+.helpCenter .help_menu dd a{ color:#666666;}
+.helpCenter .help_menu dd a:hover{ text-decoration:none; color:#e8393c;}
+.helpCenter .help_con{ float:right; width:760px; overflow:hidden;}
+.helpCenter .help_con h2{ display:block; width:736px; height:30px; padding-left:22px; border:1px solid #d5e5f4; background:#eff8ff; line-height:30px; color:#434343; font-size:14px; font-weight:bold;}
+.helpCenter .help_con p{ padding:5px 0 30px 30px; width:700px; height:auto; color:#666666;}
+.helpCenter .help_con p em{ color:#e8393c;}
+.helpCenter .help_con p b{ color:#444;}
+.helpCenter .help_con p span{ display:block; padding-left:15px; }
+.helpCenter .help_con p strong{ font-weight:bold;}

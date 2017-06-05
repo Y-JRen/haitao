@@ -1,0 +1,9 @@
+<div  class="ad-banner" id="ad_{{$ad_id}}" >
+{{if $adlist[0].url}}
+ <a href="{{$adlist[0].url}}" target="_blank">
+   <img aid="{{$adlist[0].id}}" alt="{{$adlist[0].desc}}" title="{{$adlist[0].desc}}" src="{{$adlist[0].content}}"  height="{{$board.height}}"   width="{{$board.width}}" />
+ </a>   
+{{else}}
+   <img aid="{{$adlist[0].id}}" alt="{{$adlist[0].desc}}" title="{{$adlist[0].desc}}" src="{{$adlist[0].content}}"  height="{{$board.height}}"   width="{{$board.width}}" />
+{{/if}}
+</div>

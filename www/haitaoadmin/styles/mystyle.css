@@ -1,0 +1,159 @@
+body, h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+.tbl-list {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tbl-list thead th {
+	background: #eee;
+	font-weight: normal;
+	padding: 3px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.tbl-list tbody td {
+	border-bottom: 1px solid #ddd;
+	padding: 3px 0px;
+	word-break: keep-all;
+}
+
+.content {
+	padding: 0px;
+}
+
+.search {
+	border: none;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], input[type="image"] {
+	margin: 0px;
+	padding: 1px 5px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+
+.tbl-view {
+	width: 100%;
+}
+
+.tbl-view th {
+	font-weight: normal;
+	padding: 5px 5px;
+	background: #eee;
+}
+
+.tbl-frm {
+	width: 100%;
+}
+
+.tbl-frm th, .tbl-frm td {
+	font-weight: normal;
+	padding: 10px 5px;
+	background: #eee;
+}
+
+.tbl-frm td {
+	font-weight: normal;
+	padding: 5px 5px;
+	background: #fff;
+}
+
+.panel {
+	padding: 5px;
+}
+
+.action {
+	text-align: center;
+	padding: 10px 0px;
+}
+
+.c1 {
+	color: #FF6600;
+}
+.c2 {
+	color: red;
+}
+
+.panel-opt {
+	padding: 8px;
+	background: #F2F2F2;
+}
+
+h3 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.ui-layout-footer {
+	padding: 5px 0px;
+	text-align: center;
+	background: #eee;
+	border-top: 1px solid #ddd;
+}
+
+.ui-layout-pane {
+	padding: 0px;
+}
+
+.mslt-tpl td {
+	border-bottom: 1px dashed #ddd !important;
+}
+
+.mslt-tpl td a {
+	color: #555 !important;
+	text-decoration: none !important;
+}
+
+.mslt-tpl td a:hover {
+	color: #ff6600 !important;
+}
+
+.b1 {
+	height: 5px;
+	overflow: hidden;
+}
+
+.ui-layout-center {
+	padding: 0px !important;
+}
+
+.ui-layout-pane {
+	border: none !important;
+	padding: 0px;
+}
+
+.ui-layout-pane-east {
+	background: #E4ECF7 !important;
+	border-left: 1px solid #aaa !important;
+}
+
+div.pq-grid-title {
+	padding: 0px;
+}
+div.pq-grid-toolbar-search {
+	padding: 10px;
+}
+
+.ui-layout-content {
+	padding: 0px !important;
+}
+
+.ui-layout-container {
+	padding: 0px !important;
+}
+
+.ui-layout-east dl dd {
+	margin-bottom: 5px;
+}
+.panel {
+	padding: 0px;
+}
+

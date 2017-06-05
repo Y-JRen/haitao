@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap_cuxiao{ width:990px;padding-top:8px; margin:0 auto; overflow:hidden;}
+.main_cuxiao{ width:850px; float:right; overflow:hidden; padding:2px 0; }
+.main_cuxiao .list{width:848px; overflow:hidden;border:1px solid #e9e9e9; background:#fffbfb; margin-bottom:10px;}
+.main_cuxiao .title{ clear:both; width:848px; height:35px; background:url(../images/shop/bg_title02.jpg) repeat-x; padding-left:12px; line-height:35px; color:#666666;font-family:"微软雅黑"; font-size:18px; }
+.main_cuxiao ul{ width:848px; overflow:hidden;}
+.main_cuxiao .subjectList li{ position:relative; float:left; width:412px;overflow:hidden; display:inline; margin-left:6px; margin-bottom:15px;border:2px solid #fffbfb; }
+.main_cuxiao .subjectList li .img{ display:block; width:410px; height:200px; border:1px solid #e9e9e9; text-align:center;}
+.main_cuxiao .subjectList li p{ width:405px; height:38px;padding-left:5px;line-height:38px;color:#666666; font-size:14px;border:1px solid #e9e9e9; border-top:0;}
+.main_cuxiao .subjectList li .btn{ position:absolute; bottom:0; right:0; }
+
+.main_cuxiao .subjectList li.current{ width:412px;border:2px solid #99cc33;}
+.main_cuxiao .subjectList li.current .img{ border:1px solid #fffbfb;}
+.main_cuxiao .subjectList li.current p{ background:#99cc33;color:#ffffff;border-color:#99cc33;}
+.main_cuxiao .subjectList li.current p a{color:#ffffff; font-weight:bold;}
+.main_cuxiao .subjectList li.current .btn{ display:block;}
+
+.main_cuxiao .pagesize{ clear:both; width:100px; height:22px; margin:30px auto; color:#666666; line-height:22px;}
+.main_cuxiao .pagesize img{ vertical-align:middle;}
+.main_cuxiao .pagesize span{ margin:0 5px;}
+.main_cuxiao .pagesize b{ color:#e8393c;}
+
+.main_cuxiao .proList li{ float:left; display:inline; margin:0 8px 15px; width:190px; height:315px; border:3px solid #fffbfb;}
+.main_cuxiao .proList li .img{ width:188px; height:188px; border:1px solid #ededed;}
+.main_cuxiao .proList li p.op{ width: 188px;height:35px;}
+.main_cuxiao .proList li p.op a{ display:block; float:left; margin:7px 6px; text-indent:-9999em; overflow:hidden;}
+.main_cuxiao .proList li p.op a.cart{ width:96px; height:21px; background:url(../images/shop/cart01.jpg) no-repeat;}
+.main_cuxiao .proList li p.op a.collect{ width:60px; height:21px; background:url(../images/shop/collect01.jpg) no-repeat;}
+.main_cuxiao .proList li .pro_detail{ width:178px; padding:6px; height:79px}
+.main_cuxiao .proList li .pro_detail a{color:#666666;}
+.main_cuxiao .proList li .pro_detail em{ float:left; color:#e8393c; font-size:14px; font-weight:bold;}
+.main_cuxiao .proList li .pro_detail span{ float:right; text-decoration:line-through; color:#999999;}
+.main_cuxiao .proList li.current{border:3px solid #8fc700;}
+.main_cuxiao .proList li.current p.op a.cart{ background:url(../images/shop/cart02.jpg) no-repeat;}
+.main_cuxiao .proList li.current p.op a.collect{ background:url(../images/shop/collect02.jpg) no-repeat;}
+.main_cuxiao .proList li.current .pro_detail{ background:#8fc700; color:#fff;}
+.main_cuxiao .proList li.current .pro_detail a,.main_cuxiao .proList li.current .pro_detail span,.main_cuxiao .proList li.current .pro_detail em{ color:#fff;}
+
+
+.menu_cuxiao{position: absolute; left:50%; margin-left:-495px; width:128px; overflow:hidden; border:1px solid #dddddd; background:#fff;}
+
+.menu_cuxiao h4{ width:128px; height:32px; background:url(../images/shop/bg_title.jpg) no-repeat; color:#ffffff; font-family:"微软雅黑"; font-size:14px; text-align:center; line-height:30px;} 
+.menu_cuxiao ul{ width:118px; overflow:hidden; padding:0 5px;}
+.menu_cuxiao li{ float:left;display:inline;  width:54px; height:36px; margin:0 2px; border-bottom:1px dashed #dddddd;}
+.menu_cuxiao a.last{ border-bottom:0;}
+.menu_cuxiao li a{ display:block; width:54px; height:20px; text-align:center; color:#666666; line-height:20px; text-align:center;margin:7px 1px;}
+.menu_cuxiao li a.active,.menu_cuxiao li a:hover{ background:#64a2f6; color:#fff; text-decoration:none; border-radius:5px;}

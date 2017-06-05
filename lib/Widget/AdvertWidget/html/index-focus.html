@@ -1,0 +1,18 @@
+<!--首焦图-->
+<div id="scrollDiv">
+	<ul id="subScrollDiv">
+		{{foreach from=$adlist item=item key=key}}
+		<li>
+			<a target="_blank"  href="{{$item.url}}">
+				<img alt="{{$item.desc}}" title="{{$item.desc}}"  src="{{$item.content}}" width='950' hegiht='312'/>
+			</a>
+		</li>
+		{{/foreach}}
+	</ul>
+</div>
+
+
+
+
+
+

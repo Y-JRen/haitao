@@ -1,0 +1,38 @@
+
+*{ margin:0; padding:0;}
+li,ul{ list-style-type:none;}
+img{ border:none;}
+a{ text-decoration:none; color:#000;}
+a:hover{ text-decoration:underline; color:#003;}
+body{ font-family:"宋体";font-size:12px;background:url(/haitaoadmin/images/head-bg-line.jpg) repeat-x;font: normal 12px Verdana, "Times New Roman", Times, serif;}
+h1,h2,h3,h4,h5,h6{ font-size:12px;}
+
+.index_head{height:104px; font-family:"微软雅黑"; font-size:15px; position:relative; background: url(/haitaoadmin/images/head-bg.jpg) no-repeat;     }
+.index_head-nav{float:left; margin-top:34px;margin-left:20px;border-bottom:1px solid #ccc;}
+.index_head-logo{ float:left;margin:10px}
+.index_head-nav li{ display:block; float:left; width:67px; height:35px; background:#fff no-repeat; text-align:center; line-height:36px;border-right:1px solid #ccc;}
+.index_head-nav li a{display:block;position:relative;}
+.index_head-nav li a:hover{  background:url(/haitaoadmin/images/button-hover.jpg) no-repeat; text-decoration:none; color:#FFF; width:68px;height:43px;top:-8px;line-height:52px;color:#900;font-weight:bold;}
+.index_head-nav-on{ background:url(/haitaoadmin/images/button-hover.jpg) no-repeat; text-decoration:none; color:#FFF; width:68px;height:43px;top:-8px;line-height:52px;color:#900;font-weight:bold;}
+.index_tips{ position:absolute; top:4px; left:450px; color:#FFF; font-size:12px;}
+.index_tips-right{ position:absolute; top:4px; left:900px; color:#FFF; font-size:12px;}
+.index_tips-right a{ color:#FFF;}
+.index_menu{position:absolute; top:80px; _top:62px; left:211px; color:#6f7071; font-size:12px; height:20px; line-height:20px; display:block; font-family:"Verdana";color:#333;}
+
+.index_menu span{ display:block;  height:20px; line-height:15px; float:left; margin-left:20px;}
+.index_menu span img{float:left;}
+.index_menu span a{float:left;margin-right:5px;}
+.index_menu-text{position:absolute; top:80px; _top:93px; left:480px; color:#6f7071; font-size:12px; height:20px; line-height:15px; display:block; font-family:"宋体";}
+.index_menu-right{position:absolute; top:80px; _top:97px; left:1031px; color:#6f7071; font-size:12px; height:20px; line-height:15px; display:block; font-family:"宋体";}
+.index_menu-right span{ display:block;  height:20px; line-height:15px; float:left; margin-left:10px;}
+.index_menu-right span img {float:left;}
+
+#menu_iframe {width:218px;position:absolute;top:0;bottom:0;left:0;overflow-x:hidden;overflow-y:auto;}
+#index_main_iframe {position: absolute;top: 0;bottom: 0;left: 0;overflow-x: hidden;overflow-y: auto; width: 100%;height: 100%;}
+#index_admin_left { width: 218px;position: absolute; top: 104px; bottom: 0; left: 0; background: #f6f9fd;line-height:25px;}
+#index_admin_right { position: absolute; top: 104px;bottom: 0;left: 218px;right: 0;border-left: 1px solid #9db3c5;}
+#index_admin_left .inner, #index_admin_right .index_inner {height: 100%;}
+
+.dtree{padding:5px;}
+.dTreeNode{clear:both;}
+.dTreeNode img{float:left;}

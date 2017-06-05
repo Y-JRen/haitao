@@ -1,0 +1,2 @@
+RewriteEngine  on
+RewriteRule !\.(js|ico|gif|jpg|png|swf|css|xml|xls|php)$|.*(scripts/fckeditor).*|.*(upload/[^\/]+/)$ index.php [NC]

@@ -1,0 +1,244 @@
+@charset "utf-8";
+.location {
+    color: #666666;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    padding-left: 5px;
+    width: 985px;
+}
+.location b a {
+    color: #317EE7;
+    font-family: Microsoft Yahei;
+    font-size: 18px;
+}
+.location .none {
+    display: none;
+}
+.moreclass {
+    margin: 0 auto;
+    width: 990px;
+}
+.moreclass .moreclass_tab {
+    border-bottom: 2px solid #1B75D7;
+    height: 31px;
+    overflow: hidden;
+}
+.moreclass .moreclass_tab a {
+    background: url("../images/moreclass_icon.gif") no-repeat scroll 0 0 transparent;
+    color: #1B74D6;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-weight: normal;
+    height: 31px;
+    line-height: 31px;
+    margin-right: 3px;
+    text-decoration: none;
+    width: 138px;
+}
+.moreclass .moreclass_tab a span {
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    font-family: microsoft yahei;
+    font-size: 16px;
+    height: 31px;
+    line-height: 31px;
+    padding: 0;
+    text-align: center;
+    width: 138px;
+}
+.moreclass .moreclass_tab a:hover, .moreclass .moreclass_tab a.cur {
+    background-position: 0 -62px;
+    color: #1B74D6;
+}
+.moreclass .moreclass_tab a:hover span, .moreclass .moreclass_tab a.cur span {
+    background: none repeat scroll 0 0 transparent;
+}
+.moreclass .moreclass_box {
+    border-color: #DEDCDC;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    padding: 10px 20px;
+}
+.list {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.list .title {
+    height: 37px;
+    overflow: hidden;
+    position: relative;
+}
+.list .title h2 {
+    background: url("../images/moreclass_icon.gif") no-repeat scroll 0 -132px transparent;
+    border-bottom: 1px solid #CCCCCC;
+    color: #CC0000;
+    font-size: 14px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 20px;
+}
+.list .title h2 a {
+    color: #1B75D7;
+}
+.list .title p {
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.list .title p em {
+    color: #999999;
+    font-style: normal;
+    font-weight: normal;
+}
+.list .title p a:hover {
+    text-decoration: none;
+}
+.list .title p a:hover em {
+    color: #CC0000;
+}
+.list .cont dl {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px 0;
+}
+.list .cont dl dt {
+    background: url("../images/moreclass_icon.gif") no-repeat scroll 0 -173px transparent;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    line-height: 14px;
+    overflow: hidden;
+    padding: 5px 0 10px 12px;
+}
+.list .cont dl dd {
+    line-height: 18px;
+    padding: 0 20px;
+}
+.list .cont dl dd a, .list .cont dl dd span {
+    vertical-align: middle;
+}
+.list .cont dl dd span {
+    color: #999999;
+    font-size: 10px;
+}
+.brander {
+    overflow: hidden;
+    padding: 10px 0 10px 60px;
+    position: relative;
+}
+.brander h2 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #535353;
+    font-family: microsoft yahei;
+    font-size: 16px;
+    font-weight: normal;
+    height: 36px;
+    line-height: 36px;
+}
+.brander ul {
+    margin-top: 20px;
+}
+.brander li {
+    display: inline;
+    float: left;
+    margin-right: 20px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    width: 75px;
+}
+.brander li .pic {
+    height: 42px;
+    text-align: center;
+    width: 73px;
+}
+.brander li .pic img {
+    border: 1px solid #DDDDDD;
+    vertical-align: top;
+}
+.brander li .title {
+    height: 18px;
+    line-height: 18px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.country {
+    height: 66px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 47px;
+}
+.cat{
+	padding:20px;
+	border: 1px solid #DEDCDC;
+  	border-top: 2px solid #1B75D7;	
+}
+
+.cat .cat-1{
+	margin-bottom: 30px;
+}
+
+.cat .cat-1 .title-1{
+	border-bottom: 1px solid #ccc;
+	padding: 0px 0px 10px 20px;
+    background: url("../images/moreclass_icon.gif") no-repeat scroll 0 -140px transparent;
+}
+
+.cat .cat-1 a{
+	color:#1B75D7;
+	font-size:14px;
+	font-weight: bold;
+}
+
+.cat .cat-1 a:hover{
+	color:#ff6600;
+}
+
+
+
+.cat .cat-2{
+	border-bottom: 1px solid #ccc;
+	padding:10px 0px;
+	padding-top:20px;
+}
+.cat .sub-2{padding-top:10px;
+padding-left:10px;
+padding-bottom:10px;
+}
+
+.cat .sub-2 a{
+	font-size:12px;
+	font-weight: normal;
+	color:#555;
+}
+
+.cat .title-2{
+	
+    background: url("../images/moreclass_icon.gif") no-repeat scroll 0 -175px transparent;
+    padding-left:10px;
+}
+
+.cat .title-2 a{
+	font-weight: bold;
+	font-size:12px;
+	color:#555;
+}
+
+.cat .opt{
+	float: right;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.cat .wh{
+	display: none;
+}
+
+

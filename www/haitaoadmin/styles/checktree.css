@@ -1,0 +1,45 @@
+UL.tree {
+	PADDING-BOTTOM: 5px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL.tree * {
+	PADDING-BOTTOM: 5px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL.tree IMG.arrow {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 20px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 2px
+}
+UL.tree LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 4px
+}
+UL.tree LI UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL.tree LABEL {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; CURSOR: pointer; FONT-WEIGHT: bold; PADDING-TOP: 2px
+}
+UL.tree LABEL.hover {
+	COLOR: red
+}
+P {
+	MARGIN: 5px 15px
+}
+UL {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px
+}
+UL.tree LI .arrow {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 20px; PADDING-RIGHT: 0px; BACKGROUND: no-repeat 0px 4px; FLOAT: left; HEIGHT: 20px; CURSOR: pointer; PADDING-TOP: 0px
+}
+UL.tree LI .collapsed {
+	BACKGROUND-IMAGE: url(/haitaoadmin/images/collapsed.gif)
+}
+UL.tree LI .expanded {
+	BACKGROUND-IMAGE: url(/haitaoadmin/images/expanded.gif)
+}
+UL.tree LI .checkbox {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 20px; PADDING-RIGHT: 0px; BACKGROUND: url(/haitaoadmin/images/check0.gif) no-repeat 0px 0px; FLOAT: left; HEIGHT: 18px; CURSOR: pointer; PADDING-TOP: 0px
+}
+UL.tree LI .checked {
+	BACKGROUND-IMAGE: url(/haitaoadmin/images/check2.gif)
+}
+UL.tree LI .half_checked {
+	BACKGROUND-IMAGE: url(/haitaoadmin/images/check1.gif)
+}

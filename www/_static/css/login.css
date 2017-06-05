@@ -1,0 +1,84 @@
+@charset "utf-8";/* CSS Document */
+.main{width:990px;margin:0 auto;}
+.content{width:924px;overflow:hidden;padding:45px 42px 0 24px;}
+.content .ad{float:left;width:461px;height:372px;}
+.content .form{float:right;width:317px;overflow:hidden;padding:5px 5px 20px;background:#fafafa;border:3px solid #d3d3d3;}
+.content .form p{clear:both;padding-left:19px;color:#666666;}
+.content .form p.link_reg{text-align:right;color:#999999;padding-right:10px;margin-bottom:20px;}
+.content .form p.link_reg a{color:#2854d2;text-decoration:underline;}
+.content .form p.label{margin-bottom:18px;}
+.content .form p.label label{display:block;float:left;width:48px;line-height:24px;}
+.content .form p.label input{width:170px;height:19px;border-bottom:1px solid #c8c8c8;border-right:1px solid #c8c8c8;border-top:2px solid #c8c8c8;border-left:2px solid #c8c8c8;padding:0 5px;line-height:19px;}
+.content .form p.label input.txt_focus{border:1px solid #FE8E21;border-right:1px solid #FE8E21;border-top:2px solid #FE8E21;border-left:2px solid #FE8E21;}
+.content .form p.pwd a{margin-left:10px;color:#2854d2;text-decoration:underline;}
+.content .form p.code input{width:55px;}
+.content .form p.code a{margin-left:10px;color:#969696;text-decoration:underline;}
+.content .form p.label img{vertical-align:middle;}
+.content .form p.remember{padding-left:69px;}
+.content .form p.remember input{vertical-align:middle;margin-right:3px;}
+.content .form p.login{text-align:right;padding-right:10px;}
+.content .cooperation{width:307px;overflow:hidden;border-top:1px solid #d3d3d3;margin-top:15px;padding-left:10px;text-align:right;color:#999999;line-height:30px;}
+.content .cooperation a{margin-right:15px;}
+.content .cooperation span{ display:block; width:307px; text-align:left;}
+.content .cooperation em{ display:block; text-align:right;}
+
+.reg .fl{width:535px;overflow:hidden;margin:0 0 0 89px;}
+.reg .fl .title{width:520px;height:38px;border-bottom:1px solid #d3d3d3;padding-left:15px;}
+.reg .fl .title img{vertical-align:middle;}
+.reg .fl .title span{margin-left:147px;line-height:37px;color:#999999;}
+.reg .fl .title span a{color:#2854d2;text-decoration:underline;}
+.reg .fl .form{float:left;width:535px;margin:10px 0 0 15px;padding:0;border:0;background:none;position:relative;}
+.reg .form p.label label{display:block;float:left;width:65px;text-align:left;margin-right:5px;line-height:24px;}
+.reg .form p.label span{margin-left:5px;}
+.reg .form p.read input{vertical-align:middle;color:#646464;margin-right:5px;}
+.reg .form p.read span,.reg .form p.read span a{color:#999999;}
+.reg .form p.btn{width:100%;height:39px;margin:20px 0 15px 0;}
+.reg .cooperation{width:535px;overflow:hidden;border-top:1px solid #d3d3d3;padding:0 0 0 15px;text-align:left;}
+.reg .cooperation img{vertical-align:middle;}
+.reg .fr{width:284px;overflow:hidden;margin:50px 0 0 0;}
+.reg .fr h3{width:284px;height:30px;color:#004ea1;font-family:"微软雅黑";font-size:17px;border-bottom:1px solid #d3d3d3;line-height:30px;}
+.reg .fr ul{width:284px;overflow:hidden;margin-top:10px;}
+.reg .fr ul li{width:100%;height:30px;padding:8px 0;border-bottom:1px dashed #bdbcbc;color:#959494;font-size:14px;font-family:"微软雅黑";line-height:30px;}
+.reg .fr ul li span{display:block;line-height:1em;}
+.reg .fr ul li img{vertical-align:middle;}
+.reg .fr ul li i{margin-right:9px;float:left;}
+/*提示层样式*/
+.sea{overflow:hidden;z-index:20;position:absolute;background:#fff;left:88px;top:24px;border:1px solid #ddd;}
+.sea li{line-height:26px;height:26px;}
+.sea a{display:block;margin:0;padding:0;left:0;}
+.tt{font-size:12px;margin:4px 6px 4px 6px;padding:0;height:20px;line-height:20px;overflow:hidden;float:none;}
+.tt span{float:left;}
+.tt a{float:right;font-size:12px;text-decoration:none;font-weight:bold;color:#3366cc;display:block;}
+.tt a:hover{color:#f00;background:none;}
+.down{width:208px;margin:-1px 0 0 0;padding:0;}
+.down li{padding:8px 3px;line-height:12px !important;height:12px !important;min-height:12px !important;list-style:none;cursor:pointer;margin:0;left:0;}
+.down li:hover{background:#eee;}
+/*单独底部样式*/
+.footer .menu{margin:18px 0 10px;color:#666;text-align:center;width:100%;overflow:hidden;}
+.footer .menu a{display:inline-block;margin:0 5px;color:#333;}
+.footer .menu a:hover{color:#f60;}
+.footer .copyright{line-height:22px;color:#999;text-align:center;font-family:Arial;}
+.footer_pic_link{display:block;font-size:0;padding:10px 0 20px;text-align:center;}
+.footer_pic_link a{display:inline-block;margin:0 10px;}
+
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{margin-left:8px;line-height:20px;height:20px;overflow:hidden;color:#999;font-size:12px;}
+.Validform_right{color:#71b83d;padding-left:20px;background:url(../images/validform/right.png) no-repeat left center;}
+.Validform_wrong{color:red;padding-left:20px;white-space:nowrap;background:url(../images/validform/error.png) no-repeat left center;}
+.Validform_loading{padding-left:20px;background:url(../images/validform/onLoad.gif) no-repeat left center;}
+.Validform_error{background-color:#ffe7e7;}
+#Validform_msg {color:#7d8289;font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif;width:280px;-webkit-box-shadow:2px 2px 3px #aaa;-moz-box-shadow:2px 2px 3px #aaa;background:#fff;position:absolute;top:0px;right:50px;z-index:99999;display:none;filter:progid:DXImageTransform.Microsoft.Shadow(Strength=3,Direction=135,Color='#999999');}
+#Validform_msg .iframe{position:absolute;left:0px;top:-1px;z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px;height:25px;text-align:left;font-weight:bold;padding:0 8px;color:#fff;position:relative;background-color:#000;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px;position:absolute;right:8px;top:0px;color:#fff;text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{padding:8px;border:1px solid #000;border-top:none;text-align:left;}
+
+/*密码强度*/
+.passwordStrength{}
+.passwordStrength b{font-weight:normal;color:#999999;}
+.passwordStrength b,.passwordStrength span{display:inline-block;vertical-align:middle;line-height:16px;line-height:18px\9;height:16px;}
+.passwordStrength span{width:45px;text-align:center;background-color:#d0d0d0;border-right:1px solid #fff;}
+.passwordStrength .last{border-right:none;}
+.passwordStrength .bgStrength{color:#fff;background-color:#71b83d;}
+

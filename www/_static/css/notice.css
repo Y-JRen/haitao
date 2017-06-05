@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+.searchBox{ width:990px; overflow:hidden; margin:10px auto;}
+.icon_search{ background:url(../images/shop/icon_search.png) no-repeat;}
+.searchBox .main{ width:760px; float:right; overflow:hidden;}
+.main{ color:#999999;}
+.w_notice{ width:758px; overflow:hidden; border:1px solid #dddddd;}
+.w_notice .title{ width:732px; height:36px; line-height:36px;font-family:"微软雅黑"; font-size:14px; font-weight:bold; background:#f7f7f7; padding-left:26px;border-bottom:1px solid #ddd;}
+.w_notice ul{ width:718px; overflow:hidden; margin:5px auto;}
+.w_notice li{ clear:both; color:#707070;}
+.w_notice li a{ float:left; display:block; background:url(../images/shop/dot01.jpg) left center no-repeat; padding-left:10px; color:#707070;}
+.w_notice li a:hover{ background:url(../images/shop/dot02.jpg) left center no-repeat; color:#eb6100;}
+.w_notice li span{ float:right;}
+.pagesize{ clear:both; float:right;width:170px; height:22px; margin:10px 0; color:#666666; line-height:22px;}
+.pagesize img{ vertical-align:middle;}
+.pagesize span{ margin:0 5px;}
+.pagesize b{ color:#4295e9;}
+.pagesize input{ width:33px; height:20px; border:1px solid #cccccc; vertical-align:middle; margin-left:5px;}
+
+
+.w_notice .notice_title{ width:100%; height:74px; background:#f7f7f7; border-bottom:1px solid #ddd; text-align:center;}
+.w_notice .notice_title h2{ color:#333333; font-family:"微软雅黑"; font-size:24px; padding:15px 0 5px 0;}
+.w_notice .notice_title p{ color:#707070;}
+.w_notice .notice_con{ width:724px; overflow:hidden; margin:15px auto; color:#707070;}
+.w_notice .notice_con p{ text-indent:2em;}
+.w_notice .notice_con p em,.w_notice .notice_con p a{ color:#eb6100;}
+.w_notice .notice_con .share { height:22px; margin:20px 0 0 23px;}
+.w_notice .notice_con .share span{ float:left; display:block; height:31px; line-height:31px;}
+.w_notice .notice_con .share span i{ float:left;}
+.w_notice .notice_con .share span img{ float:left;}
+.w_notice .notice_con .share a.more{ float:right;}
+
+.youlove{ clear:both;width:988px; overflow:hidden; margin:15px auto 0; }
+.youlove h2{ position:relative;display:block; width:137px; height:38px; top:1px;border:1px solid #ddd; border-bottom:0; background:#fff; color:#333333; font-size:16px; font-weight:normal; font-family:"微软雅黑"; text-align:center; line-height:37px; z-index:10;}
+.youlove .loveproList{width:976px; overflow:hidden; border:1px solid #dddddd; padding:20px 5px; }
+.youlove .loveproList .pre{ float:left;  display:block; width:28px; height:36px;margin:124px 0 0 0;}
+.youlove .loveproList .next{ float:right; display:block; width:28px; height:36px; margin:124px 0 0 0;}
+.youlove .loveproList .w_loveList{ float:left;width:920px; overflow:hidden;}
+.youlove .loveproList ul{ position:relative; }
+.youlove .loveproList ul li{ float:left; display:inline; width:200px; overflow:hidden; margin:0 15px; text-align:center;}
+.youlove .loveproList ul li .img{ display:block; width:198px; height:198px; border:1px solid #ddd;}
+.youlove .loveproList ul li b{ width:198px; white-space:nowrap; text-overflow:ellipsis;overflow:hidden; line-height:28px;font-size:14px;}
+.youlove .loveproList ul li p{ color:#9fa0a0; line-height:18px;}
+.youlove .loveproList ul li p.price { padding:10px 10px 0; }
+.youlove .loveproList ul li p.price span{ float:left; color:#aaaaaa; text-decoration:line-through;}
+.youlove .loveproList ul li p.price em{ float:right; color:#e60012; font-size:18px; font-weight:bold;}
+
+
+.searchBox .sidebar{ width:220px; float:left; overflow:hidden;}
+.searchBox .sidebar .sidemenu{ width:218px; overflow:hidden; border:1px solid #dddddd;}
+.searchBox .sidebar .sidemenu dl{ clear:both;}
+.searchBox .sidebar .sidemenu dt{ height:30px; background:#f7f7f7; color:#333333; font-size:14px; line-height:30px;font-family:"微软雅黑"; border-bottom:1px solid #ddd; cursor:pointer;}
+.searchBox .sidebar .sidemenu dt.last{ border-bottom:0;}
+.searchBox .sidebar .sidemenu dt i{ float:left; display:block; width:16px; height:15px; margin:8px 10px 0 10px; background-position:-250px 0;}
+.searchBox .sidebar .sidemenu dt i.fold{ background-position:-300px 0;}
+.searchBox .sidebar .sidemenu dd{ width:198px; margin:0 auto; display:none;}
+.searchBox .sidebar .sidemenu dd li{width:173px; padding-left:25px; height:26px; border-bottom:1px dashed #dddddd;}
+.searchBox .sidebar .sidemenu dd li.last{ border-bottom:0;}
+.searchBox .sidebar .sidemenu dd li i{ color:#666666;}
+.searchBox .sidebar .sidemenu dd li i:hover,.searchBox .sidebar .sidemenu dd li.active a{ color:#e8393c; text-decoration:none;}
+
+
+

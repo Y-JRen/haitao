@@ -1,0 +1,26 @@
+<div  class="ad-focus" id="ad_{{$ad_id}}" style="position:relative;overflow: hidden; width:{{$board.width}}px; height:{{$board.height}}px;" >
+    <div id="slide">
+      <ul class="JQ-slide-content">
+       {{foreach from=$adlist item=item}}
+         <li> 
+         <a href="{{$item.url}}" target="_blank">
+         <img aid="{{$item.id}}" alt="{{$item.desc}}" title="{{$item.desc}}" src="{{$item.content}}"  height="{{$board.height}}"   width="{{$board.width}}" /></a>
+         </li>
+       {{/foreach}}
+      </ul>
+      <ul class="JQ-slide-nav">
+      {{foreach from=$adlist item=item name=i}}
+       <li {{if $smarty.foreach.i.index eq 0}} class="on"{{/if}}>{{$smarty.foreach.i.index+1}}</li>
+       {{/foreach}}
+      </ul>
+    </div>
+</div>
+<link type="text/css" href="{{$_static_}}/css/advert.css?v={{$sys_version}}" rel="stylesheet" />
+<script type="text/javascript" src=" {{$_static_}}/js/jq.slide.js?v={{$sys_version}}"></script>
+<script>
+$("#ad_{{$ad_id}}").Slide({
+    effect : "scroolX",
+    speed : "normal",
+    timer : 3000
+});
+</script>

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+.bg_yezonghui{ width:100%; overflow:hidden; background:#2e3744; padding-bottom:20px;}
+.main_yezonghui{ position:relative; width:990px; overflow:hidden; margin:0 auto;}
+.main_yezonghui .top{ position:relative; width:990px; height:167px; background:url(../images/shop/bg_banner.jpg) no-repeat;font-family:"微软雅黑";}
+.main_yezonghui .top h2{ position:absolute; width:405px; overflow:hidden; top:30px; left:450px; color:#eb6100;  font-weight:bold; font-size:30px; line-height:60px;}
+.main_yezonghui .top h2 span{ color:#ffffff; font-size:14px; font-weight:normal; line-height:18px;}
+.main_yezonghui .time{ position:absolute; top:30px; left:45px; width:340px;}
+.main_yezonghui .time .daojishi{ width:350px; overflow:hidden;}
+.main_yezonghui .time .daojishi span{ float:left; color:#fff; font-size:18px; padding:25px 0 0 0;}
+.main_yezonghui .time .daojishi .wrap_time{ float:left; }
+.main_yezonghui .time .daojishi .wrap_time i{ display:block; float:left; margin-right:2px;  height:50px;  text-align:center; color:#ffffff; line-height:50px; font-size:43px; background:url(../images/shop/bg_time.jpg) none;}
+.main_yezonghui .time .daojishi .wrap_time em{ float:left; margin:0 9px; color:#fff; font-size:43px; line-height:50px;}
+.main_yezonghui .time  p{ clear:both; padding-left:48px; margin-top:12px; color:#ffcc01; font-size:18px;}
+.main_yezonghui .time  p span{ display:block; float:left; width:110px; height:26px; text-align:center; line-height:26px; background:#ffcc01; color:#0a0b43; font-size:18px; border-radius:5px;}
+.main_yezonghui .ad{ margin:10px 0 32px;}
+.main_yezonghui .productList{ position:relative; width:980px; border:1px solid #41464d; background:#2b3340; padding:40px 0 0 0; margin-bottom:40px;}
+.main_yezonghui .productList .title{ position:absolute; display:block; width:585px; height:46px; top:-15px; left:186px;}
+.main_yezonghui .productList .title01{ width:939px; left:26px;}
+.main_yezonghui .productList ul{width:980px; overflow:hidden;}
+.main_yezonghui .productList li{ float:left; display:inline; width:216px; height:auto;border-bottom:4px solid #272e3b;border-right:4px solid #272e3b;margin:0 0 25px 20px; }
+.main_yezonghui .productList li .w_product{ position:relative; width:204px; height:auto; border:1px solid #4a505a; padding:5px 5px 10px;}
+.main_yezonghui .productList li .w_product p{color:#ffffff; line-height:22px; width:204px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.main_yezonghui .productList li .w_product a{color:#ffffff;}
+.main_yezonghui .productList li .w_product a:hover.gift_a{border-bottom:1px solid #FF6600; text-decoration:none;}
+.main_yezonghui .productList li .w_product p.gongxiao{ font-weight:bold; text-align:center;}
+.main_yezonghui .productList li .w_product p em{ text-decoration:line-through;}
+.main_yezonghui .productList li .w_product p span{ font-family:"微软雅黑"; font-size:14px;}
+.main_yezonghui .productList li .w_product p b{font-family:"微软雅黑"; font-size:28px; color:#ffff00; line-height:30px;}
+.main_yezonghui .productList li .w_product p b i{ font-size:18px; line-height:18px; font-weight:bold;}
+.main_yezonghui .productList li .w_product .btn{ position:absolute; width:132px; height:34px; left:95px; bottom:28px;}
+
+.tc_warn{background:#fff;}
+.tc_warn .con{ width:400px; overflow:hidden;}
+.tc_warn .con p{color:#434343;font-family:"微软雅黑"; font-size:14px;}
+.tc_warn .con p input{ width:176px; height:28px; line-height:28px; padding:0 5px; margin:0 13px;}
+.tc_warn .con p img{ vertical-align:middle;}

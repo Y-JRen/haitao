@@ -1,0 +1,68 @@
+@charset "utf-8";
+.tuan-loading{background:url('/images/loading1.gif') center no-repeat;}
+.index-goods-list1{padding-top:5px;}
+.index-goods-list1 li{float:left;width:221px;margin-right:1px;text-align:center;}
+.index-goods-list1 .pi{height:195px;overflow:hidden;}
+.index-goods-list1 .pa{height:25px;}
+.index-goods-list1 .pt{height:37px;padding:0px 10px;line-height:16px;}
+.index-goods-list1 .pp{height:40px;background:#D9D9D9;}
+.index-goods-list1 .pmp{padding-top:20px;text-decoration:line-through;padding-left:10px;}
+.index-goods-list1 .prp{padding-top:12px;padding-right:12px;font-family:"Microsoft YaHei";}
+.floor{height:670px;overflow:hidden;}
+.floor_1{height:372px;}
+.floor .col-l .col-l-1 h3{height:38px;line-height:38px;background:#317EE7;text-align:center;color:#fff;font-size:15px;font-weight:bold;position:relative;font-family:"Microsoft YaHei";}
+.floor .col-l .col-l-1 h3 span{position:absolute;top:4px;left:5px;}
+.floor .col-l .col-l-1 .adv{height:426px;overflow:hidden;}
+.floor_1 .col-l .col-l-1 .adv{height:334px;}
+.floor .col-l .col-l-1 .keys{margin-top:5px;}
+.floor .col-l .col-l-1 .keys a{display:block;background:#317EE7;color:#fff;text-align:left;width:99px;height:38px;line-height:38px;float:left;margin-right:2px;margin-bottom:2px;padding-left:10px;}
+.floor .tab-h{height:35px;padding-left:1px;}
+.floor .tab-h li{float:left;}
+.floor .tab-h li a{display:block;height:35px;line-height:38px;width:166px;font-size:15px;text-align:center;text-decoration:none;color:#959595;font-family:"Microsoft YaHei";}
+.floor .tab-h li.tab-h-c a{background:#317EE7;color:#fff;font-family:"Microsoft YaHei";}
+.floor .tab-c{border:3px solid #317EE7;height:626px;overflow:hidden;}
+.floor_1 .tab-c{height:331px;overflow:hidden;}
+.floor-goods li{float:left;height:308px;width:220px;overflow:hidden;text-align:center;padding-top:5px;border-bottom:1px solid #eee;}
+.floor-goods .pi{height:200px;overflow:hidden;}
+.floor-goods .pa,.floor-goods .pp,.floor-goods .pt{width:200px;margin:0px auto;}
+.floor-goods .pa{height:24px;position:relative;top:-3px;font-family:"Microsoft YaHei";}
+.floor-goods .pt{height:42px;line-height:16px;}
+.floor-goods .pp{height:30px;}
+.floor-goods .pmp{padding-top:8px;text-decoration:line-through;padding-left:10px;color:#aaa;}
+.floor-goods .prp{padding-top:6px;padding-right:12px;font-family:"Microsoft YaHei";}
+.goods-hot h3{background:none repeat scroll 0 0 #317EE7;color:#FFFFFF;font-size:15px;font-weight:bold;height:38px;line-height:38px;text-align:left;font-weight:normal;font-family:"Microsoft YaHei";}
+.goods-hot li{text-align:left;}
+.goods-hot li .p-title{background:none repeat scroll 0 0 #eee;color:#999999;height:37px;line-height:38px;border-bottom:1px solid #fff;padding-left:10px;}
+.goods-hot li .p-detail{text-align:center;}
+.goods-hot li .p-detail .pi{height:180px;text-align:center;}
+.goods-hot li .p-detail .pt{padding:0px 20px;height:42px;line-height:20px;}
+.goods-hot li .p-detail .pp{height:36px;}
+.goods-hot i{background:url("/images/shop/icon_new.png") no-repeat scroll -150px -100px transparent;display:block;float:left;height:20px;margin:10px 15px 0 5px;width:20px;}
+/* 轮换广告位*/
+.slideadv{width:970px;height:360px;position:relative;z-index:10;overflow:hidden;}
+.slideadv .adv{width:970px;height:360px;overflow:hidden;}
+.slideadv .adv a{float:left;}
+.slideadv .num{width:30px;height:360px;position:absolute;top:0px;left:0px;}
+.slideadv .num li{display:block;margin-top:1px;background:#034D96;width:20px;padding-left:5px;height:71px;color:#fff;font:30px/70px arial;cursor:pointer;zoom:1filter:alpha(opacity=70);-moz-opacity:0.7;opacity:0.7;}
+.slideadv .num li.cur{background:#96C119;}
+.slideadv .small_focus{position:relative;width:294px;height:120px;}
+.slideadv .small_focus em{display:none;position:absolute;top:0;left:0;width:294px;height:120px;background-color:#333;opacity:.2;filter:alpha(opacity=20);-moz-opacity:.2;-khtml-opacity:.2;}
+/*end 轮换广告位*/
+/**一楼**/
+.floor1 .tab .tab-h i{background:url("/images/shop/icon_new.png") no-repeat -50px -500px;color:#FFFFFF;display:block;float:left;font-size:12px;font-style:normal;font-weight:bold;height:28px;line-height:24px;margin:5px -40px 0 10px;text-align:center;width:27px;}
+.floor1 .tab .tab-h-c i{background:url("/images/shop/icon_new.png") no-repeat 0px -500px;color:#8FC700;}
+.floor1 .tab .tab-h{height:36px;line-height:36px;font-size:15px;}
+.floor1 .tab .tab-h li{float:left;margin-right:1px;background:#d9d9d9;width:224px;text-align:center;}
+.floor1 .tab .tab-h li.tab-h-c a{background:#8FC700;color:#fff;font-family:"Microsoft YaHei";}
+.floor1 .tab .tab-h li a{text-decoration:none;display:block;height:100%;font-family:"Microsoft YaHei";color:#888;}
+.floor1 .tab .tab-h li a:hover{background:#8FC700;color:#fff;}
+.floor1 .tab .tab-c{border:3px solid #8FC700;height:302px;}
+.brand-list .jcarousel-skin-default .jcarousel-container-horizontal{width:1118px;height:62px;}
+.brand-list .jcarousel-skin-default .jcarousel-container{background:none;border:none;border-radius:0px;}
+.brand-list .jcarousel-skin-default .jcarousel-clip-horizontal{width:1118px;height:62px;}
+.brand-list .jcarousel-skin-default .jcarousel-prev-horizontal{background:url('/images/shop/btn_pre01.jpg') center;top:35px;}
+.brand-list .jcarousel-skin-default .jcarousel-prev-disabled-horizontal,.jcarousel-skin-default .jcarousel-prev-disabled-horizontal:hover,.jcarousel-skin-default .jcarousel-prev-disabled-horizontal:focus,.jcarousel-skin-default .jcarousel-prev-disabled-horizontal:active{cursor:default;background:url('/images/shop/btn_pre02.jpg') center;}
+.brand-list .jcarousel-skin-default .jcarousel-next-horizontal{background:url('/images/shop/btn_next01.jpg') center;top:35px;}
+.brand-list .jcarousel-skin-default .jcarousel-next-disabled-horizontal,.jcarousel-skin-default .jcarousel-next-disabled-horizontal:hover,.jcarousel-skin-default .jcarousel-next-disabled-horizontal:focus,.jcarousel-skin-default .jcarousel-next-disabled-horizontal:active{cursor:default;background:url('/images/shop/btn_next02.jpg') center;}
+.brand-list .jcarousel-skin-default .jcarousel-next-horizontal{top:32px;}
+.brand-list .jcarousel-skin-default .jcarousel-item{height:60px;width:120px;border:1px solid #eee;}

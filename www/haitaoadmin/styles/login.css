@@ -1,0 +1,21 @@
+*{ margin:0; padding:0;}
+li,ul{ list-style-type:none;}
+img{ border:none;}
+a{ text-decoration:none; color:#000;}
+a:hover{ text-decoration:underline; color:#003;}
+body{ font-family:"宋体" ; font-size:12px;background:#900;}
+h1,h2,h3,h4,h5,h6{ font-size:12px;}
+
+.top-bg{  height:163px;background:url('/haitaoadmin/images/login_bg.jpg') no-repeat top center #990000;}
+.login-box{ width:407px; height:281px; background:url(/haitaoadmin/images/login-box-bg.jpg) no-repeat; margin:0 auto; padding-top:85px; position:relative;}
+.user1{ font-family:"微软雅黑"; font-size:15px; color:#919191;  position:absolute;top:103px;left:95px; font-weight:bold;width:205px}
+.user2{ font-family:"微软雅黑"; font-size:15px; color:#919191;  position:absolute;top:139px;left:95px; font-weight:bold;width:205px}
+.user3{ font-family:"微软雅黑"; font-size:15px; color:#919191;  position:absolute;top:174px;left:95px; font-weight:bold;width:70px}
+.user1 span,.user2 span,.user3 span{ display:block; width:50px; float:left; margin-right:5px;}
+.user1 input,.user2 input,.user3 input{ font-family:"宋体"; font-size:12px; margin-left:15px; font-weight:100;border:none;height:20px;line-height:20px;width:100%;padding-left:5px}
+
+.user-code{ position:absolute; top:170px; left:195px;}
+.user-code img{float:left;}
+.user-code span{float:left;cursor:pointer;line-height:30px;color:#333;margin-left:5px}
+.login-button{position:absolute; top:220px; left:80px;}
+.clear-button{position:absolute; top:220px; left:230px;}

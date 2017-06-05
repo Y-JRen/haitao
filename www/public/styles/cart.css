@@ -1,0 +1,126 @@
+/**mycart flow**/
+.cartflow{float: right;padding-top: 22px;}
+.flow_header_blank{width: 1190px;height: 40px;}
+.mycart-title{width: 1190px;color: #333;line-height: 2em;overflow: hidden;margin-bottom: 15px;margin-top: 18px;}
+.mycart-title h2{font-size: 26px;float: left;font-weight: bold;margin-right: 40px;color: #333;}
+.mycart-title p{float: left;color: #666;}
+.mycart-title p button{width:70px;height:25px;padding: 2px 12px;font-size: 14px; color: #666;line-height: 15px;}
+.mycart-cont{width: 1186px;overflow: hidden;margin-bottom: 20px;border-top: 2px solid #333;border-bottom:0;}
+.mycart-cont table tr{width: 1186px;display: block;font-size: 14px; color: #666;}
+.mycart-cont table td{text-align: center;width: 167px;*border-bottom:2px solid #c2c2c2; }
+.mycart-cont table .mycart_fistrtd{width: 351px;}
+.mycart-cont .mycarttop,.mycart-cont .mycartbottom{background-color: #f1f1f1;border-bottom: 2px solid #c2c2c2;height: 40px;line-height: 40px;width: 1186px;}
+.mycart-cont .mycarttop p{float: left;margin-left: 10px;}
+
+.mycart-cont .mycarttop span{float: left;margin-left: 50px;}
+.mycart-cont .mycartbottom td{border-bottom: 0;}
+.mycart-cont .cart_offshelf{background: #f0f0f0;color: #ccc;}
+.mycart-cont .cart_offshelf td a{color: #ccc;}
+.mycart-cont .cart_offshelf td p{position: relative;}
+.mycart-cont .cart_offshelf td p i{position: absolute;background: url(../images/xiajia.png) no-repeat;width: 54px;height: 54px;left: 35px;top: 10px;}
+
+.checkbox{float: left;margin: 12px 0 0 12px;width: 14px;height: 14px;border-radius: 5px;-moz-border-radius:5px;background-color: #fff;border: 1px solid #ccc;}
+.mycart-cont .cartname{border-bottom:2px solid #c2c2c2;}
+.mycart-cont .cartname img{width: 50px;height: 50px;border: 2px solid #ccc;float: left;margin:0 5px 9px 35px;}
+.mycart-cont .cartname .checkbox{margin-top: 28px;margin-left: 25px;}
+.mycart-cont .cartname input{margin-top: 7px;}
+.mycart-cont .cartname .mycart_fistrtd{text-align: left;}
+.mycart-cont .cartname .mycart_fistrtd p{margin:10px 8px 10px 0;line-height: 25px;display: block;}
+.mycart-cont .cartname .mycart_fistrtd p span{font-size: 12px;color: #999;}
+.mycart-cont .cartname td font{cursor: pointer;}
+.mycart-cont .warehouse{height: 40px;line-height: 27px;border-bottom:2px solid #c2c2c2;}
+.mycart-cont .warehouse input{margin-top: 12px;}
+.mycart-cont .warehouse p{float: left;padding-left: 10px;margin: 5px 0;}
+.mycart-cont .warehouse p img{padding:0 10px;float: left;}
+
+.mycart-cont .mycarttop2 span{margin-left: 12px;}
+.mycart-cont .mycarttop2{background-color: #fff;}
+.mycart-cont .warehouse2{background-color: #f1f1f1;}
+.mycart-cont .warehouse2 p{padding-left: 0;}
+.mycart-cont .cartname2{padding-left: 0;}
+.mycart-cont .cartname2 img{margin-left:12px;}
+.mycart-cont .carttext{width: 40px;margin: 0 5px;background-color: #fff;border: 1px solid #ccc;text-align: center;}
+.mycart-cont .cart1,.mycart-cont .cart2{min-width: 20px;background-color: #fff;border: 1px solid #ccc;cursor: pointer;}
+.cartprice{width:350px;float: right;text-align: right;color: #666;padding-right: 15px;margin-bottom:20px;}
+.cartprice p{font-weight: bold;}
+.cartprice p span{color: #990000;padding: 0 5px;}
+.cartprice p strong{font-size: 24px;}
+.cartprice hr{border: 0;width: 345px;height: 1px;border-top: 1px dashed #ccc;margin:12px 0 12px 3px;}
+.cartprice .buyBtn{margin-top: 12px;font-size: 15px;text-align: center;border-radius: 5px;height: 31px;border: 1px solid #666;float: right;}
+.shopping{background:url(../images/overbuybg.png) repeat-x;color: #edeaea;font-weight: bold;text-shadow:1px 1px 1px #000;min-width: 117px;padding: 0 5px;}
+.unshopping{color: #C4C2C2;font-weight: bold;border: 1px solid #CAC4C4;min-width: 117px;padding: 0 5px;}
+#gobuy{color: #666;padding: 0 6px;margin-right: 15px;background:url(../images/gobuybg.png) repeat-x;}
+.shoppingB{float: right;}
+.remark{float: left;color: #666;margin-bottom: 20px;}
+.remark textarea{border:2px solid #ccc;margin-top: 15px;color: #999;padding: 10px;resize:none;overflow: hidden;}
+/**getinfo**/
+.getinfo,.payinfo,.transfer{width: 1186px;overflow: hidden;border-right: 2px solid #ccc;border-left: 2px solid #ccc;border-top:2px solid #666;padding-bottom: 20px;}
+.infoh3,.infoh4{border-bottom: 1px dashed #ccc;font-size:20px;font-weight: bold;color: #666;line-height: 2.2em;margin-bottom: 15px;padding-left: 12px; }
+.getinfo ul{padding-left: 32px;}
+.getinfo ul li{color: #666;width: 1000px;display: block;min-height: 35px;}
+.getinfo ul li a{color: #666;}
+.getinfo ul li strong{float: left;margin-right: 15px;}
+.getinfo ul li p{float: left;margin-right: 60px;}
+.getinfo ul li a{float: left;margin-right: 20px;}
+.getinfo ul li .danxuan{float: left;margin-right: 30px;border: none;}
+.getinfo form{margin-top: 25px;color: #666;overflow: hidden;}
+.getinfo .buyBtn{margin-top: 12px;font-size: 15px;text-align: center;border-radius: 5px;height: 31px;border: 1px solid #666;float: left;}
+.getinfo .addnew_adress{width: 1000px;height: 45px;border:0;}
+.getinfo .addnew_adress a{display:inline-block;margin-top:18px;*margin-top:5px;*margin-left: 15px;}
+.infogroup{width: 1100px;margin-bottom: 15px;float: left;line-height: 26px;}
+.infogroup span{text-align: right;width: 160px;float: left;margin-top: 5px;}
+.infogroup span em{color: #990000;}
+.infogroup input,.infogroup select{border:2px solid #ccc;padding: 3px;float: left;margin-left: 10px;}
+.infogroup select{width: 120px;}
+.infogroup select:focus{border:2px solid #ccc; }
+.infogroup select option{border-left: 1px solid #666;border-right: 1px solid #666;}
+.infogroup select option:hover{background-color: #990000;color: #fff;}
+.infoname,.celnum{width: 170px;}
+.infogroup b{color: #999;font-weight: normal;margin-left: 12px;margin-top: 5px;display:inline-block;}
+.infogroup .phone1,.infogroup .phone3{width: 55px;}
+.payinfo p{color: #666;margin-left: 32px;}
+.payinfo img{margin: 20px 0 5px 90px;}
+.payinfo button{margin-left: 32px;}
+.transfer .ways{color: #666;margin-left: 32px;overflow: hidden;}
+.transfer .ways b{float: left;margin-right: 25px;}
+.transfer .ways .waysO{float: left;width: 1050px;}
+.transfer .ways .waysO span{color: #990000;margin-left: 15px;margin-right: 40px;}
+.transfer .ways .waysO input.danxuan{width: 20px;height:13px;float: left;margin-right: 20px;margin-left: 0;margin-top: 3px;border: 0;}
+.transfer .ways .waysO p{float: left;margin-bottom: 15px;*width: 90px;}
+.transfer .ways .waysO p.ways0_p{*width: 800px;margin-left:20px;}
+.transfer .ways .waysO .baojia{margin-right: 20px;background-color: #fff;border: 1px solid #ccc;float: left;margin-top: 2px;border: 0;}
+.transfer .ways .waysb{margin-left: 85px;margin-top: 12px;}
+.transfer .ways .waysb p .danxuan{margin-right: 8px;margin-left: 30px;margin-top: 3px;border: 0;}
+.transfer .ways .waysb input{border:2px solid #ccc;margin-left: 20px;color: #ccc;padding: 3px 5px;width: 120px;}
+.transfer .ways .waysb .danwei{width: 240px;}
+.infoh4{margin-bottom: 0;}
+.infoh4 span{color: #990000;font-weight: normal;font-size: 14px;margin-left: 20px;}
+.infoh4 a{font-weight: normal;font-size: 14px;margin-left: 60px;}
+/**checkinfo**/
+.checktop{margin-left:15px;color: #666;}
+.checktop p{margin-bottom: 15px;}
+.checktop b{margin-right: 40px;width: 100px;text-align: right;display: inline-block;}
+.checktop a{color: #999;}
+.checktop span{margin-left: 21px;}
+.payinfo p a{color: #999;}
+.checkway{margin-bottom: 10px;}
+.checkway p{float: left;}
+.checkway p span{padding-left: 55px;padding-top: 15px;display: inline-block;}
+.checkway em{color: #990000;margin-left: 12px;margin-right: 30px;}
+/**mycart success**/
+.successinfo{border-bottom: 2px solid #ccc;margin-bottom: 60px;}
+.success-flag{padding: 110px 40px 0 40px;float: left;}
+.success-main{float: left;padding-top: 30px;color: #666;line-height:2em;}
+.success-main h3,.success-main h4{font-size: 21px;font-weight: bold;border-bottom: 1px dashed #ccc;margin-bottom: 8px;padding-bottom: 8px;}
+.success-main table{margin-bottom: 10px;color: #666;}
+.success-main table td{border: 1px solid #000;text-align: center;padding: 3px 30px;}
+.success-main b{color: #666;}
+.success-main span{color: #990000;margin: 0 8px;font-weight: bold;font-size: 19px;}
+.success-main p i{float: left;margin-right: 15px;}
+.success-main p img{float: left;}
+.success-main button{clear: both;}
+.success-flag2{padding: 30px 40px 0 40px;float: left;}
+/**mycart failed**/
+.success-main h4{color: #990000;font-size: 20px;}
+.success-main em{color: #999;font-weight: normal;}
+.faliedp{margin-left: 25px;}

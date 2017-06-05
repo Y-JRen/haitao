@@ -1,0 +1,314 @@
+@charset "utf-8";
+body{font-family:'微软雅黑',Verdana,Tahoma,Arial,Geogia,宋体,Sans-serif; margin:0 auto; padding:0; background:#fff;}
+body,form,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,img,div,span,input,textarea,tr,td,th,caption{padding:0; margin:0; border:0;}
+body li{list-style:none}
+body a{text-decoration:none;}
+a:link,a:visited {text-decoration:none; } 
+a:focus {outline:0;}  
+br.clearfix{clear:both; font-size:0; line-height:0; height:0; border:0; margin:0px; padding:0px; font-size:0;}
+
+
+.findStep{width: 780px;height: 46px;margin: 26px auto 0;}
+.findStep li{float: left;width: 190px;height: 46px;}
+.findStep li div{width: 190px;height: 18px;margin: 0 0 8px 0;}
+.findStep li p{font-size: 18px;color: #666;width: 190px;height: 20px;line-height: 20px;text-align: center;}
+.status1 .step01 div{background: url(../images/onStep01.png) no-repeat;}
+.status1 .step02 div{background: url(../images/step02.png) no-repeat;}
+.status1 .step03 div{background: url(../images/step03.png) no-repeat;}
+.status1 .step04 div{background: url(../images/step04.png) no-repeat;}
+.status2 .step01 div{background: url(../images/step01.png) no-repeat;}
+.status2 .step02 div{background: url(../images/onStep02.png) no-repeat;}
+.status2 .step03 div{background: url(../images/step03.png) no-repeat;}
+.status2 .step04 div{background: url(../images/step04.png) no-repeat;}
+.status3 .step01 div{background: url(../images/step01.png) no-repeat;}
+.status3 .step02 div{background: url(../images/step02.png) no-repeat;}
+.status3 .step03 div{background: url(../images/onStep03.png) no-repeat;}
+.status3 .step04 div{background: url(../images/step04.png) no-repeat;}
+.status4 .step01 div{background: url(../images/step01.png) no-repeat;}
+.status4 .step02 div{background: url(../images/step02.png) no-repeat;}
+.status4 .step03 div{background: url(../images/step03.png) no-repeat;}
+.status4 .step04 div{background: url(../images/onStep04.png) no-repeat;}
+/*会员中心*/
+.memberCenter{width: 1190px;height: auto;margin: 10px auto;}
+.memberCenter .topNav{width: 1190px;font-size: 14px;color: #333;line-height: 14px;margin: 20px 0;}
+.memberCenter .topNav a{color: #333;font-weight: bold;}
+.memberCenter .mcContent{width: 1190px;height: auto;}
+.memberCenter .mcContent .mcContentLeft{width: 148px;height: auto;float: left;margin: 0 10px 0 0;}
+.memberCenter .mcContent .leftMenu{width: 148px;height: auto;}
+.memberCenter .mcContent .leftMenu li{border: 1px solid #ccc;border-top: 1px solid #333;width: 146px;height: auto;border-bottom: 0;}
+.memberCenter .mcContent .leftMenu li .leftMenu_title{width: 146px;height: 30px;line-height: 30px;color: #333;font-size: 14px;font-weight: bold;text-indent: 0.4em;background: url(../images/menu_icon.png) 125px 8px no-repeat;background-color: #f1f1f1;border-bottom: 1px solid #ccc;}
+.memberCenter .mcContent .leftMenu li .listItem{width: 146px;height: auto;}
+.memberCenter .mcContent .leftMenu li .listItem p{font-size: 14px;color: #666;line-height: 14px;padding: 17px 0 0 0;padding-left: 14px;width: 132px;}
+.memberCenter .mcContent .leftMenu li .listItem p a{color: #666;}
+.memberCenter .mcContent .leftMenu li .listItem p.last{padding-bottom: 17px;}
+.memberCenter .mcContent .leftMenu li.last{border-bottom: 1px solid #ccc;}
+.memberCenter .mcContentRight{width: 1032px;height: auto;float: left;}
+.memberCenter .mcContentRightTop{width: 1032px;height: 178px;}
+.memberCenter .mcContentRightTop .member_content{width: 690px;height: 174px;border: 2px solid #ccc;float: left;margin-right: 14px;}
+.memberCenter .mcContentRightTop .member_content .member_tx{width: 99px;height: 149px;float: left;margin: 25px 0 0 20px;}
+.memberCenter .mcContentRightTop .member_content .member_tx .member_tx_img{width: 99px;height: 99px;}
+.memberCenter .mcContentRightTop .member_content .member_tx .member_tx_revise{width: 99px;text-align: center;font-size: 14px;color: #666;height: 40px;line-height: 40px;cursor: pointer;}
+.memberCenter .mcContentRightTop .member_img{width: 320px;height: 174px;border: 2px solid #ccc;float: left;}
+.memberCenter .mcContentRightTop .member_content .member_main{width: 500px;height: ;margin: 25px 0 0 20px;float: left;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_name{width: 500px;height: 26px;line-height: 26px;color: #333;font-size: 14px;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event{width: 500px;height: 30px;line-height: 30px;font-size: 14px;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event div{float: left;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event.first{margin: 10px 0 0 0;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event .member_event_tit{width: 75px;height: 30px;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event .member_event_list{width: 110px;height: 30px;}
+.memberCenter .mcContentRightTop .member_content .member_main .member_event .member_event_list a{color: #333;}
+.memberCenter .mcContentRightMiddle{width: 1032px;height: 340px;margin: 10px 0 0 0;}
+.memberCenter .mcContentRightMiddle .mccrmTitle{width: 1032px;height: 36px;margin: 0 0 10px 0;}
+.memberCenter .mcContentRightMiddle .tj_product{width: 1032px;height: 290px;}
+.memberCenter .mcContentRightMiddle .tj_product li{width: 240px;height: 290px;float: left;margin: 0 24px 0 0;}
+.memberCenter .mcContentRightMiddle .tj_product li.last{margin: 0;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_img{width: 238px;height: 238px;border: 1px solid #ccc;text-align: center;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_img img{margin: 12px 0 0 0;width: 204px;height: 204px;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_name{width: 240px;height: 24px;font-size: 14px;color: #666;line-height: 24px;border-bottom: 1px solid #e5e5e5;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_price{width: 240px;height: 25px;line-height: 25px;font-size: 14px;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_price .tj_product_price01{width: 120px;height: 25px;float: left;color: #666;}
+.memberCenter .mcContentRightMiddle .tj_product li .tj_product_price .tj_product_price02{width: 120px;height: 25px;float: left;text-align: right;color: #900;}
+.memberCenter .mcContentRightBottom{border: 2px solid #ccc;width: 1028px;height: 122px;margin: 15px 0 0 0;}
+
+/*我的订单*/
+.memberCenter .rightTitle{width: 1032px;height: 32px;line-height: 32px;}
+.memberCenter .rightTitle .leftNav{float: left;width: 750px;height: 32px}
+.memberCenter .rightTitle .leftNav p{float: left;font-size: 14px;height: 32px;font-weight: bold;}
+.memberCenter .rightTitle .leftNav p.leftNav01{width: 75px;}
+.memberCenter .rightTitle .leftNav p.leftNav02{min-width: 92px;margin-right: 5px;}
+.memberCenter .rightTitle .leftNav p a{color: #333;font-weight: normal;}
+.memberCenter .rightTitle .rightNav{float: right;line-height: 32px;height: 32px;width: 279px;}
+.memberCenter .rightTitle .rightNav div{float: left;height: 32px;}
+.memberCenter .rightTitle .rightNav div.rightNav01{width: 90px;height: 22px;margin: 5px 10px 0 0;display: inline;}
+.memberCenter .rightTitle .rightNav div.rightNav01 select{width: 90px;height: 22px;display: block;margin: 0;}
+.memberCenter .rightTitle .rightNav div.rightNav02{width: 218px;height: 21px;border: 1px solid #ccc;margin: 5px 10px 0 0;display: inline;}
+.memberCenter .rightTitle .rightNav div.rightNav02 input{width: 214px;height: 20px;color: #666;line-height: 20px;padding-left: 4px;}
+.memberCenter .rightTitle .rightNav div.rightNav03{width: 49px;height: 24px;margin: 4px 0;}
+.memberCenter .orderList{width: 1032px;height: auto;}
+.memberCenter .orderList table{width: 1032px;border-collapse:collapse;}
+.memberCenter .orderList table td{border: 1px solid #ccc;height: 76px;text-align: center;color: #666;}
+.memberCenter .orderList table .first{background: #f1f1f1;font-weight: bold;}
+.memberCenter .orderList table .first td{height: 36px;}
+.memberCenter .orderList table td.allBtn{background: url(../images/check_bg.png) 7px 10px no-repeat;font-weight: normal;}
+.memberCenter .orderList table td.checkBox input{width: 15px;height: 15px;}
+.memberCenter .orderList table td.picImg{padding: 6px 6px 0 6px;}
+.memberCenter .orderList table td.picImg div{width: 46px;height: 46px;border: 1px solid #ccc;float: left;margin: 0 6px 6px 6px;}
+.memberCenter .orderList table td.price{color: #900;}
+.memberCenter .orderList table td.time p{width: 110px;text-align: center;height: 16px;line-height: 16px;}
+.memberCenter .orderList table td.caozuo div{height: 22px;line-height: 22px;}
+.memberCenter .orderList table td.caozuo div.payBtn{width: 48px;height: 22px;margin-left: 41px;*margin-left: 6px;}
+.memberCenter .orderList table td.caozuo div a{color: #666;}
+.memberCenter .orderBottom{width: 1032px;height: 31px;margin: 10px 0 0 0;}
+.memberCenter .orderBottom .hb_pay_btn{width: 127px;height: 31px;float: left;}
+.memberCenter .orderBottom .page{width: auto;float: right;height: 30px;}
+.memberCenter .orderBottom .page a{width: auto;float: left;display: inline-block;margin: 4px 10px;line-height: 22px;height: 22px;color: #333;}
+.memberCenter .orderBottom .page a.current{width: 22px;text-align: center;background: #900;color: #fff;margin: 4px 5px;}
+.memberCenter .orderBottom .page .goPage{width: 85px;line-height: 24px;height: 24px;display: inline-block;margin: 0 5px 0 20px;}
+.memberCenter .orderBottom .page .goPage input{width: 26px;height: 22px;line-height: 22px;border: 1px solid #ccc;margin: 0 3px;text-align: center;padding-right: 4px;float: left;}
+.memberCenter .orderBottom .page .goPage p{float: left;height: 24px;line-height: 30px;width: auto;}
+.memberCenter .orderBottom .page select{margin-top: 6px;}
+.memberCenter .orderBottom .page strong{width: auto;float: left;display: inline-block;margin: 4px 10px;line-height: 24px;height: 22px;color: #333;}
+
+/*订单详情*/
+.memberCenter .detailTitle{height: auto;width: 1187px;border: 2px solid #ccc;border-top: 2px solid #333;padding-bottom: 28px;margin-top: 10px;}
+.memberCenter .detailTitle .dd_msg{width: 1187px;height: 30px;border-bottom: 2px solid #ccc;font-size: 14px;color: #333;background: #f1f1f1;}
+.memberCenter .detailTitle .dd_msg li{float: left;line-height: 30px;height: 30px;font-weight: bold;}
+.memberCenter .detailTitle .dd_msg li.dd_msg01{width: 280px;margin: 0 0 0 16px;}
+.memberCenter .detailTitle .dd_msg li.dd_msg02{width: 380px;}
+.memberCenter .detailTitle .dd_msg li.dd_msg03{width: 280px;}
+.memberCenter .detailTitle .findStep{height: 90px;}
+.memberCenter .detailTitle .findStep li{height: 90px;}
+.memberCenter .detailTitle .findStep li p.time{line-height: 44px;height: 44px;}
+.memberCenter .detailTitle .completed{width: 1187px;text-align: center;height: 40px;line-height: 40px;font-size: 14px;color: #c00;}
+.memberCenter .detailTitle .pay{width: 127px;height: 31px;margin: 0 auto;}
+.memberCenter .detailTitle .detailMsg{width: 1050px;height: ;margin: 17px auto 0;}
+.memberCenter .detailTitle .detailMsg li{float: left;width: 348px;height: auto;border-right: 2px solid #ccc;}
+.memberCenter .detailTitle .detailMsg li p{width: 348px;line-height: 24px;font-size: 14px;color: #333;word-wrap:break-word;}
+.memberCenter .detailTitle .detailMsg li p.first{font-weight: bold;}
+.memberCenter .detailTitle .detailMsg li.sendMsg p{width: 280px;margin-left: 65px;}
+.memberCenter .detailTitle .detailMsg li.sendMsg p.textIndex{text-indent: 5em;}
+.memberCenter .detailTitle .detailMsg li.last{border: 0;}
+.memberCenter .detailTitle .detailMsg li.last p{width: 200px;margin-left: 130px;}
+.memberCenter .detailTitle .table table{width: ;border-collapse:collapse;}
+.memberCenter .detailTitle .table table td{border: 1px solid #ccc;text-align: center;}
+.memberCenter .detailTitle .table table .first td{border-top: 0;}
+.memberCenter .detailTitle .table table td.first{text-align: left;text-indent: 1em;border-left: 0;}
+.memberCenter .detailTitle .table table td.last{border-right: 0;}
+.memberCenter .detailTitle.last{padding-bottom: 0;border-bottom: 0;}
+.memberCenter .detailTitle .table table td.first div{float: left;width: 46px;height: 46px;border: 2px solid #ccc;margin-left: 14px;}
+.memberCenter .detailTitle .table table td.first p{float: left;line-height: 50px;height: 50px;width: auto;color: #666;}
+.memberCenter .detailTitle .table table td{color: #900;}
+.memberCenter .detailTitle .table table .first td{color: #666;}
+.memberCenter .totalMoney{width: 230px;height: 200px;margin-top: 10px;float: right;margin-right: 10px;}
+.memberCenter .totalMoney div{height: 36px;width: 230px;}
+.memberCenter .totalMoney .total_p1{float: left;font-size: 14px;font-weight: bold;height: 36px;line-height: 36px;color: #666;width: 70px;text-align: right;}
+.memberCenter .totalMoney .total_p2{float: left;color: #900;font-size: 24px;height: 36px;line-height: 36px;width: 160px;text-align: right;}
+.memberCenter .totalMoney .total_p2 span{font-size: 14px;color: #666;}
+.memberCenter .totalMoney div.borderBottom{border-bottom: 1px #ccc dashed;}
+.memberCenter .totalMoney .wantPayBtn{width: 127px;height: 31px;margin: 15px 0 0 130px;}
+
+
+/*等待收货*/
+.memberCenter .detailTitle .dd_msg .company{float: left;margin: 0 30px 0 585px;*margin: 0 30px 0 440px;width: 126px;}
+.memberCenter .detailTitle .dd_msg .number{float: left;width: 137px;}
+.memberCenter .detailTitle .pro{width: 935px;margin: 20px 0 0 67px;font-size: 14px;color: #666;}
+.memberCenter .detailTitle .pro td{height: 24px;}
+.memberCenter .detailTitle .pro tr.first{font-weight: bold;color: #333;}
+.memberCenter .surePage{height: 160px;}
+
+
+/*订单完成*/
+.memberCenter .detailTitle  .completed_a{font-size: 24px;}
+
+/*我的资料*/
+.memberCenter .dataLeft{width: 98px;height: 136px;margin-left: 50px;float: left;display: inline;}
+.memberCenter .dataLeft .data_tx{width: 98px;height: 98px;}
+.memberCenter .dataLeft .tx_revise{width: 98px;height: 18px;line-height: 18px;color: #666;font-size: 14px;text-align: center;margin: 10px 0;}
+.memberCenter .dataLeft .tx_revise a{color: #666;}
+.memberCenter .dataRight{width: 660px;height: auto;float: left;margin-left: 34px;}
+.memberCenter .dataRight li{width: 660px;height: 24px;line-height: 24px;float: left;margin-bottom: 10px;}
+.memberCenter .dataRight li .dataMsg{width: 90px;height: 24px;float: left;text-align: right;font-size: 14px;color: #666;}
+.memberCenter .dataRight li .dataMsg span{color: #900;}
+.memberCenter .dataRight li .dataText{float: left;width: 180px;margin-left: 5px;display: inline;margin-right: 10px;}
+.memberCenter .dataRight li .dataText input{width: 172px;height: 22px;border: 1px solid #999;color: #666;padding-left: 6px;line-height: 22px;}
+.memberCenter .dataRight li .dataTip{width: 60px;height: 24px;line-height: 24px;color: #666;float: left;font-size: 14px;}
+.memberCenter .dataRight li .disabledText input{height: 21px;width: 171px;background: #e9e9e9;border-left: 2px solid #999;border-top: 2px solid #999;}
+
+.memberCenter .dataRight li .sexSelect{width: auto;height: 24px;float: left;width: 110px;}
+.memberCenter .dataRight li .sexSelect div{float: left;width: 15px;height: 15px;margin: 5px 5px 0 5px;display: inline;}
+.memberCenter .dataRight li .sexSelect div input{width: 15px;height: 15px;}
+.memberCenter .dataRight li .sexSelect p{float: left;width: 30px;height: 24px;line-height: 26px;}
+
+.memberCenter .dataRight li .selectBox{width: 300px;height: 24px;float: left;}
+.memberCenter .dataRight li .selectBox select{width: 88px;height: 20px;border: 2px solid #ccc;margin: 0;padding: 0;display: block;float: left;margin: 2px 4px;line-height: 20px;color: #666;}
+.memberCenter .dataRight li .widthText01{width: 455px;}
+.memberCenter .dataRight li .widthText01 input{width: 445px;}
+.memberCenter .dataRight li .widthText02{width: 64px;}
+.memberCenter .dataRight li .widthText02 input{width: 50px;}
+.memberCenter .dataRight li .inputBox{width: 330px;height: 24px;}
+.memberCenter .dataRight li .inputBox input{float: left;height: 22px;border: 1px solid #ccc;padding-left: 5px;margin-right: 10px;color: #666;line-height: 22px;}
+.memberCenter .dataRight li .inputBox input.dataInput01{width: 45px;}
+.memberCenter .dataRight li .inputBox input.dataInput02{width: 95px;}
+.memberCenter .dataRight li .getCode{width: 100px;font-size: 14px;height: 24px;line-height: 24px;float: left;}
+.memberCenter .dataRight li .getCode a{color: #900;text-decoration: underline;}
+.memberCenter .dataRight li.baocunBtn{height: 31px;margin: 20px 0 0 0;}
+.memberCenter .dataRight li.baocunBtn .dataText{width: 127px;}
+.memberCenter .dataRight li.baocunBtn .dataTip{height: 31px;line-height: 31px;color: #900;width: 120px;margin-left: 20px;}
+
+
+/*修改头像*/
+.memberCenter .reviseLeft{width: 200px;margin-right: 72px;height: auto;}
+.memberCenter .reviseLeft p{width: 200px;height: auto;line-height: 24px;font-size: 14px;}
+.memberCenter .reviseRight{width: 500px;height: auto;float: left;}
+.memberCenter .reviseRight p{width: 500px;line-height: 24px;font-size: 14px;}
+.memberCenter .reviseRight .file_btn{width: 124px;height: 22px;margin: 10px 0 0 0;}
+.memberCenter .reviseRight .file_img{width: 196px;height: 196px;overflow: hidden;position: absolute;border: 2px solid #ccc;margin: 8px 0 0 0;}
+.memberCenter .reviseRight .file_img img{display: block;}
+
+/*修改密码*/
+.memberCenter .revisePassword{width: 850px;height: 170px;margin: 50px 0 0 125px;}
+.memberCenter .revisePassword li{height: 24px;width: 850px;line-height: 24px;font-size: 14px;margin-bottom: 12px;}
+.memberCenter .revisePassword li div{float: left;}
+.memberCenter .revisePassword li div span{color: #900;}
+.memberCenter .revisePassword li div.first{text-align: right;width: 140px;margin-right: 10px;height: 24px;}
+.memberCenter .revisePassword li div.second{width: 180px;height: 24px;}
+.memberCenter .revisePassword li div.second input{width: 172px;padding-left: 6px;height: 22px;border: 1px solid #ccc;}
+.memberCenter .revisePassword li div.seconds{width: 127px;height: 31px;margin-top: 18px;}
+.memberCenter .revisePassword li div.third{width: 450px;height: 24px;font-size: 14px;color: #999;margin-left: 14px;}
+
+
+/*收获地址*/
+.adrTitle{width: 1000px;height: 24px}
+.adrTitle p{width: auto;font-size: 14px;color: #333333;float: left;height: 24px;line-height: 24px;margin-right: 15px;}
+.adrTitle p span{color: #c00;display: inline-block;margin: 0 3px;}
+.adrTitle div{width: 96px;height: 24px;float: left;cursor: pointer;}
+.adrList{width: 1030px;min-height: 210px;height: auto;border: 1px solid #ccc;border-top-color: #333;margin: 10px 0 0 0;}
+.adrList .adrList_header{width: 1030px;border-bottom: 1px solid #ccc;background: #f1f1f1;height: 36px;font-size: 14px;line-height: 36px;}
+.adrList .adrList_header p{float: left;margin-left: 20px;width: 100px;height: 36px;}
+.adrList .adrList_header ul{float: right;width: 270px;height: 36px;margin: 0 10px 0 0;}
+.adrList .adrList_header ul li{float: left;margin: 0 5px;height: 36px;}
+.adrList .adrList_header ul li.adrHeaderBtn{width: 49px;height: 24px;margin: 6px 5px;cursor: pointer;}
+.adrList .adrList_header ul li.morenIcon{width: 142px;}
+.adrList .adrList_header ul li.morenIcon div{width: 25px;height: 17px;background: url(../images/adressIcon.png) no-repeat;float: left;margin: 9px 0 0 0;cursor: pointer;}
+.adrList .adrList_header ul li.morenIcon p{width: 112px;float: left;margin: 0;}
+.adrList .adrList_header ul li.morenIcon div.current{background-position: 0 -17px;}
+.adrList .adrList_content{width: 980px;height: auto;margin: 15px 0 0 20px;}
+.adrList .adrList_content li{width: 980px;height: 28px;line-height: 28px;}
+.adrList .adrList_content li div{float: left;font-size: 14px;color: #666;}
+.adrList .adrList_content li div.adrName{width: 80px;text-align: right;}
+.adrList .adrList_content li div.adrMain{width: 890px;font-weight: bold;margin: 0 0 0 10px;}
+
+/*修改地址弹窗*/
+.pop_revise_adr{width: 721px;height: 350px;background: url(../images/pop_revise_bg.png) no-repeat;position: absolute;top: 0;left: 50%;margin: 0 0 0 -360px;z-index: 101;display: none;}
+.pop_revise_adr .pop_input01{width: 176px;height: 20px;border: 2px solid #ccc;position: absolute;top: 32px;left: 178px;background: #fff;}
+.pop_revise_adr .pop_input02{width: 450px;height: 20px;border: 2px solid #ccc;position: absolute;top: 100px;left: 178px;background: #fff;}
+.pop_revise_adr .pop_input03{width: 450px;height: 24px;line-height: 24px;position: absolute;top: 196px;left: 178px;font-size: 14px;color: #666;}
+.pop_revise_adr .pop_inputCode { width: 100px; height: 20px; border: 2px solid #ccc; position: absolute; top: 170px; left: 178px; background: #fff; }
+.pop_revise_adr .pop_input04{top: 234px;}
+.pop_revise_adr .pop_input05{width: 46px;height: 20px;border: 2px solid #ccc;position: absolute;top: 270px;left: 178px;background: #fff;}
+.pop_revise_adr .pop_input06{left: 238px;width: 116px;}
+.pop_revise_adr .pop_input07{left: 368px;}
+.pop_revise_adr .pop_input_last{width: 450px;height: 20px;border: 2px solid #ccc;position: absolute;top: 135px;left: 178px;background: #fff;}
+.pop_revise_adr input{width: 100%;height: 100%;}
+.pop_revise_adr .pop_select{width: 320px;height: 24px;position: absolute;top: 70px;left: 173px;}
+.pop_revise_adr .pop_select select{width: 90px;height: 20px;margin: 0 5px;padding: 0;border: 2px solid #ccc;}
+.pop_revise_adr .pop_name{width: 150px;height: 24px;line-height: 24px;font-size: 14px;left: 20px;text-align: right;position: absolute;color: #666;}
+.pop_revise_adr .pop_name span{color: #c00;}
+.pop_revise_adr .pop_name01{top: 32px;}
+.pop_revise_adr .pop_name02{top: 70px;}
+.pop_revise_adr .pop_name03{top: 100px;}
+.pop_revise_adr .pop_name_last{top: 135px;}
+.pop_revise_adr .pop_nameCode { top: 170px; }
+.pop_revise_adr .pop_name04{top: 196px;}
+.pop_revise_adr .pop_name05{top: 234px;}
+.pop_revise_adr .pop_name06{top: 270px;}
+.pop_revise_adr .pop_baocun_btn{width: 127px;height: 31px;position: absolute;left: 178px;top: 300px;cursor: pointer;}
+.pop_close_btn{width: 30px;height: 30px;position: absolute;top: 0;right: 0;	cursor: pointer;}
+
+/*确认删除弹窗*/
+.pop_sure{width: 325px;height: 125px;background: url(../images/pop_sure_bg.png) no-repeat;position: absolute;left: 50%;margin: 0 0 0 255px;top: 310px;display: none;z-index: 101;}
+.pop_sure .pop_sure_btn{width: 80px;height: 35px;position: absolute;top: 68px;left: 72px;cursor: pointer;}
+.pop_sure .pop_no_btn{width: 80px;height: 35px;position: absolute;top: 68px;left:160px;cursor: pointer;}
+/*遮罩*/
+#onload_cover{ display:none; width:100%; height:100%; position:absolute; left:0px; top:0; z-index: 100; background:#000; opacity: 0.5; filter:alpha(opacity=50);}
+
+/*我的收藏*/
+.pro_total{width: 1000px;font-size: 14px;line-height: 24px;height: 24px;color: #666;}
+.pro_total span{color: #900;}
+.storeList{width: 1032px;height: auto;margin: 5px 0 0 0;color: #666;font-size: 14px;}
+.storeList table{border-collapse:collapse;width: 1032px;}
+.storeList table tr td{border: 2px solid #ccc;height: 36px;}
+.storeList table tr.first td{border-top: 2px solid #333;background: #f1f1f1;}
+.storeList table tr td.first{width: 73px;line-height: 40px;}
+.storeList table tr td.first input{margin:0 6px;display: inline-block;}
+.storeList table tr td.second{width: 387px;text-align: center;}
+.storeList table tr td.second div{width: 360px;margin: 0 auto;}
+.storeList table tr td.third{width: 187px;text-align: center;}
+.storeList table tr td.forth{width: 186px;text-align: center;}
+.storeList table tr .listCheck{text-align: center;height: 76px;}
+.storeList table tr .listCheck input{width: 15px;height: 15px;}
+.storeList table tr td.price{color: #c00;}
+.storeList table tr td.time p{width: 186px;height: 20px;line-height: 20px;}
+.storeList table tr td.last{border: 2px solid #ccc;}
+.storeList table tr td.last a{display: inline-block;color: #666;margin: 0 3px;}
+.storePage{height: 30px;line-height: 30px;width: 1032px;font-size: 14px;color: #666;}
+.storePage ul{height: 30px;width: 500px;margin: 0 0 0 15px;float: left;display: inline;}
+.storePage ul li{float: left;margin: 0 5px;height: 30px;width: auto;}
+.storePage ul li.first{width: 72px;text-indent: 1em;cursor: pointer;}
+.storePage ul li.first input{margin-right: 6px;}
+.pageBox{width: 410px;height: 30px;line-height: 30px;float: right;}
+.pageBox .pageList{float: left;width: 286px;height: 24px;margin: 3px 0;}
+.pageBox .pageList a{display: inline-block;color: #333;font-size: 14px;width: 24px;height: 24px;line-height: 24px;text-align: center;margin: 0 3px;}
+.pageBox .pageList a.prevPage,.pageBox .pageList a.nextPage{width: 50px;display: inline-block;margin: 0 3px;}
+.pageBox .goPage{float: left;}
+.pageBox .pageList a.current{background: #900;color: #fff;}
+.pageBox .pageList a:hover{background: #900;color: #fff;}
+.pageBox .goPage{width: 120px;height: 22px;line-height: 22px;margin: 4px 0;}
+.pageBox .goPage li{height: 22px;line-height: 22px;}
+.pageBox .goPage li input{width: 30px;height: 20px;border: 1px solid #ccc;text-align: center;font-size: 14px;color: #666;line-height: 20px;}
+
+/*我的预定*/
+.bookList table tr.first td.second{height: 36px}
+.bookList table tr td.second{width: 462px;height: 76px;}
+.bookList table tr td.third,.bookList table tr td.sixth{width: 139px;text-align: center;}
+.bookList table tr td.forth{width: 140px;}

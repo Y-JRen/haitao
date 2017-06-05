@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+<cache>
+    <shop>
+        <index>
+            <index>{$PARAM['u']}_{$COOKIE['u']}_{$PARAM['a']}_{$COOKIE['a']}</index>
+			<prom></prom>
+			<jpy></jpy>
+        </index>	
+		
+        <goods>
+			<list>{$PARAM['id']}_{$PARAM['page']}</list>
+			<label>{$PARAM['id']}_{$PARAM['page']}</label>  
+        </goods>
+        <groupGoods>
+			<index></index>
+			<show>{$PARAM['id']}</show>
+        </groupGoods>
+        <help>
+			<index></index>
+			<list>{$PARAM['id']}</list>
+			<info>{$PARAM['id']}</info>
+			<sitemap></sitemap>
+        </help>
+        <zt>
+		    <index></index>
+			<detail>{$PARAM['id']}</detail>
+        </zt>
+        <page>
+		    <special>{$PARAM['event']}_{$PARAM['u']}_{$COOKIE['u']}_{$PARAM['a']}_{$COOKIE['a']}_{$COOKIE['is_new_member']}_{$PARAM['page']}</special>
+			<info>{$PARAM['id']}</info>
+        </page>
+    </shop>
+</cache>
+<clean>
+    <admin>
+	
+	</admin>
+</clean>
+</configdata>

@@ -1,0 +1,23 @@
+.public{margin-bottom: 30px;}
+.public .public_left{width:827px;padding: 20px 10px 0 10px;float: left;margin-right: 15px;color: #333;min-height: 642px;}
+.public .public_left ul li{line-height: 2em;}
+.public .public_left ul li a{color: #333;}
+.public .public_left ul li p{margin-right: 12px;float: left;}
+.public .public_right{float: left;width: 324px;height: 665px;}
+.public .public_right .public_imgtop{margin-bottom: 15px;display: inline-flex;}
+.public .public_right .public_imgbottom{display: inline-flex;}
+.public .textP{text-align: center;line-height: 2em;}
+.public .textP h1{font-weight: bold;font-size: 30px;margin-bottom: 8px;}
+.public .textP h2{margin-bottom: 8px;}
+.public .textP em{font-weight: normal;color: #999;}
+.public .textP hr{border: 0;border-top: 1px dashed #ccc;height: 1px;margin: 8px 0 40px 0;}
+.public .textP p{width: 700px;margin-left: 70px;text-align: left;*margin-left: 0;}
+/**support**/
+.support{margin-bottom: 30px;}
+.support .spleft{float: left;width: 148px;line-height: 2em;border-left: 2px solid #ccc;border-right: 2px solid #ccc;}
+.support .spleft dl dt,.spright-title{font-weight: bold;text-indent: 8px;border-bottom: 2px solid #ccc;border-top: 2px solid #333;background-color: #f1f1f1;}
+.support .spleft dl dd{padding:2px 12px 2px 12px;}
+.support .spleft .lastbotm{border-bottom: 2px solid #ccc;}
+.spright{width: 1016px;margin-left: 18px;float: left;border: 2px solid #ccc;border-top: 0;line-height: 2em;*width: 1016px;}
+.spright-text{margin:20px 20px 30px 40px;}
+.spright-text a{color: #990000;margin-left: 30px;}

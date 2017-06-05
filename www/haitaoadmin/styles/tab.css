@@ -1,0 +1,25 @@
+#show_tab {
+    float: left;
+    width: 100%;
+    border-bottom: 0px solid #b30e00;
+}
+#show_tab li {
+    float: left;
+    margin-right: 10px;
+    width: 60px;
+    padding: 6px 5px 4px; 
+    list-style-type: none;
+    text-align: center;
+    border-top: 1px solid #b30e00;
+    border-left: 1px solid #b30e00;
+    border-right: 1px solid #b30e00;
+}
+#show_tab .bg_nav{
+    font-weight: normal;
+    cursor: pointer;
+}
+#show_tab .bg_nav_current{
+    color: #fff;
+    background: #b30e00;
+    cursor: pointer;
+}

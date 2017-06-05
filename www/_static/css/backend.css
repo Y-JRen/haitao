@@ -1,0 +1,109 @@
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0; padding:0;}
+body{font-size:12px; font-family:"ËÎÌå",Simsun; line-height:2em;}
+table{border-collapse:collapse; border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{ font-style:normal; font-weight:normal;}
+ol,ul,li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;}
+
+input{outline:none} 
+
+a:focus{outline:none;}
+a {text-decoration:none; color:#544B3C;}
+a:hover{text-decoration:underline;}
+button{overflow:visible;cursor:pointer}
+table{empty-cells:show;border-collapse:collapse; border-spacing:0;}
+th,td{border-collapse:collapse;}
+
+/*ÎÄ×ÖÅÅ°æ*/
+.f12{font-size:12px;}
+.f13{font-size:13px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f20{font-size:20px;}
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.t2{text-indent:2em;}
+.unl{ text-decoration:underline;}
+.no_unl{text-decoration:none;}
+
+
+/*¶¨Î»*/
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.bc{margin-left:auto; margin-right:auto;}
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:right;}
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{display:inline-block}
+.clearfix{display:block;}
+.vm{vertical-align:middle;}
+.pr{position:relative;}
+.pa{position:absolute;}
+.zoom{zoom:1;}
+.show{ display:block;}
+.none{display:none;}
+.hidden{ visibility:hidden;}
+
+.clear{ clear: both;height: 0;font: 0/0 Arial;visibility: hidden;}
+
+.w980{width:980px;}
+
+.font_red{ color:#f00;}
+
+/*117go html*/
+html{ overflow-x:hidden;}
+.iconbg{ background:url(../images3/iconbg.png) no-repeat;_background:url(../images3/iconbg.gif) no-repeat;}
+.btn{ background:url(../images3/button.gif) no-repeat;}
+span.star{ display:block; width:20px; height:20px; background-position:0 -350px; position:absolute; bottom:-5px; right:-5px; z-index:1000;}
+span.jingpin{ display:block; width:56px; height:56px; position:absolute; top:-2px; right:-5px;background-position:0 -840px;}
+span.hot{display:block; width:56px; height:56px; position:absolute; top:-2px; right:-5px; background-position:0 -900px;}
+.el{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+
+@charset "utf-8";
+/* CSS Document */
+
+.header{ width:100%; height:83px; background:url(/images/backend/bg_head_service.jpg) repeat-x;} 
+.header .h_main{ width:990px; margin:0 auto;}
+.content{ width:990px; overflow:hidden; margin:28px auto 0;}
+.content .tab_quan{ width:990px; height:35px; border-bottom:1px solid #d1d2d2;font-family:"Î¢ÈíÑÅºÚ"; }
+.content .tab_quan ul{ width:525px; float:left;}
+.content .tab_quan ul li{float:left; width:261px; height:35px; margin:0 1px 0 0; }
+.content .tab_quan ul li a{ display:block;width:261px; height:35px; background:url(/images/backend/bg_quan02.jpg) no-repeat; text-align:center; color:#ffffff; line-height:35px; font-size:22px; text-decoration:none;}
+.content .tab_quan ul li.active a,.content .tab_quan ul li a:hover{ background:url(/images/backend/bg_quan01.jpg) no-repeat;}
+.content .tab_quan p{ float:left; margin-left:15px; line-height:35px; font-size:14px; color:#494747; font-size:14px;}
+.content .quanList .search{ text-align:left; width:100%; height:25px; line-height:25px; padding:15px 0; color:#494747; font-family:"Î¢ÈíÑÅºÚ"; font-size:14px;}
+.content .quanList .search input{ width:241px; height:25px; padding-left:5px; border:1px solid #d6d6d6;}
+.content .quanList .search img{ vertical-align:middle;}
+.content .quanList  table{ text-align:center; color:#7e7d7d;}
+.content .quanList  table th{ height:29px; background:#eef0f0; text-align:center; color:#7e7d7d; font-size:14px; font-weight:bold;}
+.content .quanList  table tr.info{ height:35px; background:url(/images/backend/bg_tr.jpg) repeat-x;}
+.content .quanList  table td.result{ padding:30px;}
+.content .quanList  table td.result em{ font-weight:bold; color:#f26925;}
+
+.content .quanList  table.sift { text-align:left;  height:25px; line-height:25px; margin:15px 0 10px 5px;}
+.content .quanList  table tr.sift input{ widows:124px; height:23px; border:1px solid #d6d6d6;}
+.content .quanList  table td.sel{ line-height:24px; padding:10px 0;}
+.content .quanList  table td.sel img{ vertical-align:middle;}
+.content .quanList  table td.sel input{ vertical-align:middle;}
+.content .quanList  table.tList{ margin-bottom:56px;}
+
+
+.login{ width:100%; height:506px; background:#f7f7f7;}
+.login .l_main{ position:relative; width:837px; height:390px; background:url(/images/backend/bg_login.jpg) no-repeat; margin:0 auto;}
+.login .l_main input{ position:absolute; display:block; left:556px; height:23px;  border:0px; line-height:23px;}
+.login .l_main input.name{ width:240px; padding:0 2px; top:121px;}
+.login .l_main input.pwd{ width:240px; padding:0 2px; top:156px; }
+.login .l_main input.check{ left:558px; width:80px; padding:0 2px; top:191px;}
+.login .l_main .btn_login{ position:absolute; display:block; width:326px; height:29px; top:244px; left:477px;}
+.login .l_main .code{ position:absolute; width:67px; height:19px; top:193px; left:678px;}
+.login .l_main .change{ position:absolute; display:block; width:37px; height:25px; top:192px; left:763px; }
