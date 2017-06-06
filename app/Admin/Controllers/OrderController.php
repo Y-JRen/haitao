@@ -1197,8 +1197,10 @@ class Admin_OrderController extends Zend_Controller_Action
             $addr_zip = $this -> _request -> getParam('addr_zip',null);
             $addr_eng_address = $this -> _request -> getParam('addr_eng_address',null);
             $priceLogistic = 0;
+            $credentials_type = $this -> _request -> getParam('credentials_type',null);
+            $credentials_no = $this -> _request -> getParam('credentials_no',null);
             
-            $batchSN = $this -> _api -> add($type,$add,$addg,$provinceID,$cityID,$areaID,$error,$giftbywho,$addr_consignee,$addr_address,$addr_tel,$addr_mobile,$order_payment,$priceLogistic,$shop_id,$external_order_sn,$add_time,null,$logistics_type,$part_pay,0,0,$user_name,$note_print,$note_logistic,$distribution_type,$distribution_shop_id,$lid,$addr_zip,$addr_eng_address);
+            $batchSN = $this -> _api -> add($type,$add,$addg,$provinceID,$cityID,$areaID,$error,$giftbywho,$addr_consignee,$addr_address,$addr_tel,$addr_mobile,$order_payment,$priceLogistic,$shop_id,$external_order_sn,$add_time,null,$logistics_type,$part_pay,0,0,$user_name,$note_print,$note_logistic,$distribution_type,$distribution_shop_id,$lid,$addr_zip,$addr_eng_address,$credentials_type,$credentials_no);
             if ($error) {
                 Custom_Model_Message :: showMessage($error);
             } else {

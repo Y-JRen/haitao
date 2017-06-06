@@ -1,0 +1,3 @@
+ALTER TABLE `shop_order_batch`
+ADD COLUMN `credentials_type`  tinyint(1) NULL DEFAULT 1 COMMENT '证件类型 1：身份证；2：军官证；3：护照；4：回乡证；5：台胞证；6：警官证；7：士兵证' AFTER `status_declare`,
+ADD COLUMN `credentials_no`  varchar(50) NULL DEFAULT '' AFTER `credentials_type`;

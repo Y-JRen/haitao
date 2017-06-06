@@ -1131,7 +1131,7 @@ class Admin_Models_API_Order
      * @param   array      $add
      * @return  void
      */
-    public function add($type, $add, $addg, $provinceID, $cityID, $areaID, &$error=null ,$giftbywho=null ,$addr_consignee=null,$addr_address=null,$addr_tel=null,$addr_mobile=null,$order_payment=null,$priceLogistic=null,$shopID=null,$externalOrderSN=null,$orderTime=null,$note=null,$logistics_type=null,$part_pay='0',$try_order_id=0,$user_id=0,$user_name='',$note_print=null,$note_logistic=null,$distribution_type=null,$distribution_shop_id=null,$lid=1,$addr_zip=null,$addr_eng_address=null)
+    public function add($type, $add, $addg, $provinceID, $cityID, $areaID, &$error=null ,$giftbywho=null ,$addr_consignee=null,$addr_address=null,$addr_tel=null,$addr_mobile=null,$order_payment=null,$priceLogistic=null,$shopID=null,$externalOrderSN=null,$orderTime=null,$note=null,$logistics_type=null,$part_pay='0',$try_order_id=0,$user_id=0,$user_name='',$note_print=null,$note_logistic=null,$distribution_type=null,$distribution_shop_id=null,$lid=1,$addr_zip=null,$addr_eng_address=null,$credentials_type=0,$credentials_no='')
     {
         
         if (!$addr_consignee) {
@@ -1393,6 +1393,8 @@ class Admin_Models_API_Order
                      'note_logistic' => $note_logistic ? $note_logistic : null,
                      'sms_no' => $sms_no ? $sms_no : null,
         			 'tax' => $tax>50?$tax:0 ,
+        			 'credentials_type' => $credentials_type,
+        			 'credentials_no' => $credentials_no,
                     );
         if ($logistics_type == 'self' || $logistics_type == 'externalself') {
             if ($logistics_type == 'self') {
@@ -5132,55 +5134,55 @@ class Admin_Models_API_Order
 	    		'MerID' => $MerID, // 商户ID String(3) 非空 （银联网络分配3位定值）（注意与MerNo不同）
 	    		                   // 测试环境（定值）：0P3
 	    		                   // 生产环境（定值）：BZZ
-	    		'OrderNo' => '', // 客户系统流水号 String(20) 非空 客户系统生成
+	    		'OrderNo' => $order['batch_sn'], // 客户系统流水号 String(20) 非空 客户系统生成
 	    		'sysno' => '000000000000', // 银联支付单号 String(30) 非空 定值：000000000000（12位）
-	    		'cardno	' => '', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
+	    		'cardno	' => '0000000000000000000', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
 	    		'traceno' => '', // 银联需求流水号 String(6) 非空 客户随机生成（6位长度，保证当天不唯一即可）
 	    		'termid' => '00904044', // 终端号 String(8) 非空 银联分配给客户（定值）
 	    		'CurrCode' => '142', // 海关货币代码 String(3) 非空 海关货币代码(一般RMB为：142)
 	    		
 	    		'CurrCodeCIQ' => '156', // 国检货币代码 String(3) 非空 国检货币代码（一般RMB为：156）
-	    		'PayAmount' => sprintf ( "%012d", '' ), // 交易金额 String(12) 非空
+	    		'PayAmount' => sprintf ( "%012d", $order['price_order'] ), // 交易金额 String(12) 非空
 	    		                                        // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'MerNo' => $MerNo, // 商户号 String(15) 非空 银联网络分配给客户的商户号（15位定值）
 	    		'RealName' => '', // 持卡人真实姓名 String(16) 非空
-	    		'CredentialsType' => '', // 证件类型 String(2) 非空 01：身份证；
+	    		'CredentialsType' => sprintf ( "%02d",$order['credentials_type']), // 证件类型 String(2) 非空 01：身份证；
 	    		                         // 02：军官证；
 	    		                         // 03：护照；
 	    		                         // 04: 回乡证；
 	    		                         // 05: 台胞证；
 	    		                         // 06: 警官证；
 	    		                         // 07: 士兵证；
-	    		'CredentialsNo' => '', // 证件号码 String (18) 非空
+	    		'CredentialsNo' => $order['credentials_no'], // 证件号码 String (18) 非空
 	    		'ShoppingDate' => date('Ymd',$order['pay_time']), // 订单交易（支付）日期 String(8) 非空 YYYYMMDD
-	    		'InternetDomainName' => '', // 电商平台互联网域名 String(512) 非空 电商平台的互联网域名。
+	    		'InternetDomainName' => 'www.1jiankang.com', // 电商平台互联网域名 String(512) 非空 电商平台的互联网域名。
 	    		                            // 以海关发布的对接电商平台域名列表为准。
-	    		'ECommerceCode' => '', // 电商平台编号（海关） String(20) 非空
+	    		'ECommerceCode' => '3120560038', // 电商平台编号（海关） String(20) 非空
 	    		                       // 在海关通关系统中备案的平台企业编号或代码
-	    		'ECommerceName' => '', // 电商平台名称(海关) String(48) 非空 在海关通关系统中备案的平台企业名称
-	    		'MerCode' => '', // 交易商家编号（海关） String(20) 非空
+	    		'ECommerceName' => '上海众馥实业有限公司', // 电商平台名称(海关) String(48) 非空 在海关通关系统中备案的平台企业名称
+	    		'MerCode' => '3110966871', // 交易商家编号（海关） String(20) 非空
 	    		                 // 在海关通关系统中备案的平台企业下入驻商户的编号或代码。如果没有则填ECommerceCode电商平台编号
-	    		'MerName' => '', // 交易商家名称（海关） String(48) 非空
+	    		'MerName' => '国药（上海）电子商务有限公司', // 交易商家名称（海关） String(48) 非空
 	    		                 // 在海关通关系统中备案的平台企业下入驻商户的编号或代码。如果没有则填ECommerceName电商平台名称
-	    		'CbepComCode' => '', // 跨境电商平台企业备案号（国检） String(20) 非空
+	    		'CbepComCode' => '3120560038', // 跨境电商平台企业备案号（国检） String(20) 非空
 	    		                     // 跨境电商平台企业在国检关口做企业备案，审核通过后的企业备案号
-	    		'CbepComName' => '', // 跨境电商平台企业备案名称（国检） String(48) 非空
+	    		'CbepComName' => '上海众馥实业有限公司', // 跨境电商平台企业备案名称（国检） String(48) 非空
 	    		                     // 跨境电商平台企业在国检关口做企业备案，审核通过后的企业备案名称
-	    		'CbepMerCode' => '', // 跨境电商交易商家备案号（国检） String(20) 非空
+	    		'CbepMerCode' => '3110966871', // 跨境电商交易商家备案号（国检） String(20) 非空
 	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案号，如果没有则填CbepComCode跨境电商平台企业备案号（国检）
-	    		'CbepMerName' => '', // 跨境电商交易商家备案名称（国检） String(48) 非空
+	    		'CbepMerName' => '国药（上海）电子商务有限公司', // 跨境电商交易商家备案名称（国检） String(48) 非空
 	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案名称，如果没有则填CbepComNam跨境电商平台企业备案名称（国检）
-	    		'GoodsAmount' => '', // 货款 String(12) 非空
+	    		'GoodsAmount' => sprintf ( "%012d", $order['price_goods']*100 ), // 货款 String(12) 非空
 	    		                     // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'TaxAmount' => sprintf ( "%012d", $order['tax']*100 ), // 税款 String(12) 非空
 	    		                   // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'Freight' => sprintf ( "%012d", $order['price_logistic']*100 ), // 运费 String(12) 非空
 	    		                 // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
-	    		'InsuredFee' => '', // 保费 String(12) 非空
+	    		'InsuredFee' => sprintf ( "%012d", $order['']*100 ), // 保费 String(12) 非空
 	    		                    // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'Mobile' => '', // 银行预留手机号码 String(11) 可空
 	    		'Email' => '', // 持卡人常用邮箱 String(32) 可空
-	    		'BizTypeCode' => '', // 业务类型 String(2) 非空 直购进口：1
+	    		'BizTypeCode' => '2', // 业务类型 String(2) 非空 直购进口：1
 	    		                     // 网购保税进口：2
 	    		'OriOrderNo' => $order['batch_sn'], // 商户自己系统原订单号 String(20) 非空 商户自己系统的原订单号
 	    		'PayNo' => $PayNo, // 校验值 String(20) 非空 校验值（我司会做校验）：
@@ -5193,15 +5195,15 @@ class Admin_Models_API_Order
 	    		                    // 2：运费
 	    		'IEType' => 'E', // 进出口类型 String(1) 非空 I：进口
 	    		                 // E：出口
-	    		'OrganType' => '', // 机构类型 String(1) 非空 0：海关、国检都推送
+	    		'OrganType' => '1', // 机构类型 String(1) 非空 0：海关、国检都推送
 	    		                   // 1：只推送海关
 	    		                   // 2：只推送国检
-	    		'CustomsCode' => '', // 海关平台代码 String(6) 非空 详见CustomsCode参数说明
-	    		'PortCode' => '', // 口岸代码 String(4) 非空 详见海关关口代码表
-	    		'CIQOrgCode' => '', // 检验检疫机构代码 String(8) 非空 详见国检机构代码表
-	    		'BusinessType' => '', // 业务类型 String(10) 非空 B2B2C或B2C
-	    		'CreTime' => '', // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
-	    		'GetResultTime' => '',  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
+	    		'CustomsCode' => '100017', // 海关平台代码 String(6) 非空 详见CustomsCode参数说明
+	    		'PortCode' => '2238', // 口岸代码 String(4) 非空 详见海关关口代码表
+	    		'CIQOrgCode' => '311500', // 检验检疫机构代码 String(8) 非空 详见国检机构代码表
+	    		'BusinessType' => 'B2C', // 业务类型 String(10) 非空 B2B2C或B2C
+	    		'CreTime' => date('YmdHis',$order['add_time']), // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
+	    		'GetResultTime' => date('YmdHis',$order['pay_time']),  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
 	    );
 	    
 	    $xml_model = new Custom_Model_Xml ();
@@ -5222,8 +5224,10 @@ class Admin_Models_API_Order
 	    $output = socket_read ( $socket, $base_len + $ext_len );
 	    socket_close ( $socket );
 	    
-	    $xml_model->xml2array($output);
+	    $data = $xml_model->xml2array($output);
+	    var_dump($data);die();
 	    //
+	    $set = array();
 	    $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
 	} 
 }

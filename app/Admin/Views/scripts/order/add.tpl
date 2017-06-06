@@ -53,6 +53,21 @@
         <select name="type" id="type" onchange="changetype(this.value)">
          <option value="b2c">后台下单</option>
         </select> 
+        
+        证件类型：
+        <select name="credentials_type" id="credentials_type">
+         <option value="1">身份证</option>
+	     <option value="2">军官证</option>
+	     <option value="3">护照</option>
+	     <option value="4">回乡证</option>
+	     <option value="5">台胞证</option>
+	     <option value="6">警官证</option>
+	     <option value="7">士兵证</option>
+        
+          
+        </select>
+        <input type='text' name='credentials_no'/>
+        
         <select name="distribution_type" id="distribution_type" style="display:none">
           <option value="0">销售单</option>
           <option value="1">刷单</option>
