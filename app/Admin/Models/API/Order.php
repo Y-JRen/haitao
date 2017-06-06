@@ -5112,7 +5112,7 @@ class Admin_Models_API_Order
 	function send_union_pay($batchSN)
 	{
 		$order = array_shift($this -> getOrderBatch(array('batch_sn' => $batchSN)));
-	    $evn = 'test';
+	    $env = 'test';
 	    if ($env == 'test') {
 	    	// test
 	    	$host = "111.203.189.205";
@@ -5128,24 +5128,25 @@ class Admin_Models_API_Order
 	    	$MerNo = '';
 	    	$PayNo = 'BZZ000000000000';
 	    }
+	    $traceno = time()-strtotime(date('Y-m-d')).rand(1,9);
 	    $data = array (
-	    		'msgtype' => 0100, // 信息类型 定值 非空 定值：0100
-	    		'procode' => 350000, // 处理码 定值 非空 定值：350000
+	    		'msgtype' => '0100', // 信息类型 定值 非空 定值：0100
+	    		'procode' => '350000', // 处理码 定值 非空 定值：350000
 	    		'MerID' => $MerID, // 商户ID String(3) 非空 （银联网络分配3位定值）（注意与MerNo不同）
 	    		                   // 测试环境（定值）：0P3
 	    		                   // 生产环境（定值）：BZZ
 	    		'OrderNo' => $order['batch_sn'], // 客户系统流水号 String(20) 非空 客户系统生成
 	    		'sysno' => '000000000000', // 银联支付单号 String(30) 非空 定值：000000000000（12位）
-	    		'cardno	' => '0000000000000000000', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
-	    		'traceno' => '', // 银联需求流水号 String(6) 非空 客户随机生成（6位长度，保证当天不唯一即可）
+	    		'cardno' => '0000000000000000000', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
+	    		'traceno' => sprintf ( "%06d",$traceno), // 银联需求流水号 String(6) 非空 客户随机生成（6位长度，保证当天不唯一即可）
 	    		'termid' => '00904044', // 终端号 String(8) 非空 银联分配给客户（定值）
 	    		'CurrCode' => '142', // 海关货币代码 String(3) 非空 海关货币代码(一般RMB为：142)
 	    		
 	    		'CurrCodeCIQ' => '156', // 国检货币代码 String(3) 非空 国检货币代码（一般RMB为：156）
-	    		'PayAmount' => sprintf ( "%012d", $order['price_order'] ), // 交易金额 String(12) 非空
+	    		'PayAmount' => sprintf ( "%012d", $order['price_order']*100 ), // 交易金额 String(12) 非空
 	    		                                        // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'MerNo' => $MerNo, // 商户号 String(15) 非空 银联网络分配给客户的商户号（15位定值）
-	    		'RealName' => '', // 持卡人真实姓名 String(16) 非空
+	    		'RealName' => $order['addr_consignee'], // 持卡人真实姓名 String(16) 非空
 	    		'CredentialsType' => sprintf ( "%02d",$order['credentials_type']), // 证件类型 String(2) 非空 01：身份证；
 	    		                         // 02：军官证；
 	    		                         // 03：护照；
@@ -5202,32 +5203,48 @@ class Admin_Models_API_Order
 	    		'PortCode' => '2238', // 口岸代码 String(4) 非空 详见海关关口代码表
 	    		'CIQOrgCode' => '311500', // 检验检疫机构代码 String(8) 非空 详见国检机构代码表
 	    		'BusinessType' => 'B2C', // 业务类型 String(10) 非空 B2B2C或B2C
-	    		'CreTime' => date('YmdHis',$order['add_time']), // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
-	    		'GetResultTime' => date('YmdHis',$order['pay_time']),  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
+	    		'CreTime' => date('YmdHis',strtotime($order['add_time'])), // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
+	    		'GetResultTime' => date('YmdHis',strtotime($order['pay_time'])),  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
 	    );
 	    
 	    $xml_model = new Custom_Model_Xml ();
-	    $xml_data = $xml_model->array2xml ( $data, 'BODY' );
+	    //$xml_data = $this->arrayToXml ( $data);
+	    $xml_data = $xml_model->array2xml($data,'BODY');
 	    
 	    $params = '<?xml version="1.0" encoding="gbk"?>
 	    <PACKAGE>
 	    ' . $xml_data . '
 	    </PACKAGE>';
 	    
-	    
+	    $params = strlen($params).$params;
 	    $base_len = 6;
 	    
 	    $socket = socket_create ( AF_INET, SOCK_STREAM, SOL_TCP ) or die ( "Could not create    socket\n" ); // 创建一个Socket
-	    $connection = socket_connect ( $socket, $host, $port ) or die ( "Could not connet server\n" ); // 连接
-	    socket_write ( $socket, $params, strlen ( $params ) ) or die ( "Write failed\n" ); // 数据传送
+	    
+	    $connection = @socket_connect ( $socket, $host, $port ) or die ( "Could not connet server\n" ); // 连接
+	    
+	    socket_write ( $socket, $params ) or die ( "Write failed\n" ); // 数据传送
 	    $ext_len = socket_read ( $socket, $base_len );
 	    $output = socket_read ( $socket, $base_len + $ext_len );
 	    socket_close ( $socket );
 	    
 	    $data = $xml_model->xml2array($output);
-	    var_dump($data);die();
+	    var_dump($data);echo $params;die();
 	    //
 	    $set = array();
 	    $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
 	} 
+	function arrayToXml($arr){
+	    $xml = "<BODY>";
+	    foreach ($arr as $key=>$val){
+	        if(is_array($val)){
+	            $xml.="<".$key.">".arrayToXml($val)."</".$key.">";
+	        }else{
+	            $xml.="<".$key.">".$val."</".$key.">";
+	        }
+	    }
+	    $xml.="</BODY>";
+	    return $xml;
+	}
+	
 }
