@@ -5128,6 +5128,9 @@ class Admin_Models_API_Order
 	    	$MerNo = '';
 	    	$PayNo = 'BZZ000000000000';
 	    }
+	    
+	    $price_goods = round($order['price_order']/(1+0.119),0);
+	    $tax = $order['price_order'] - $price_goods;
 	    $traceno = time()-strtotime(date('Y-m-d')).rand(1,9);
 	    $data = array (
 	    		'msgtype' => '0100', // 信息类型 定值 非空 定值：0100
@@ -5146,7 +5149,7 @@ class Admin_Models_API_Order
 	    		'PayAmount' => sprintf ( "%012d", $order['price_order']*100 ), // 交易金额 String(12) 非空
 	    		                                        // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'MerNo' => $MerNo, // 商户号 String(15) 非空 银联网络分配给客户的商户号（15位定值）
-	    		'RealName' => $order['addr_consignee'], // 持卡人真实姓名 String(16) 非空
+	    		'RealName' => $order['addr_consignee'], // 持卡人真实姓名 String(16) 非空 测试:张三
 	    		'CredentialsType' => sprintf ( "%02d",$order['credentials_type']), // 证件类型 String(2) 非空 01：身份证；
 	    		                         // 02：军官证；
 	    		                         // 03：护照；
@@ -5154,7 +5157,7 @@ class Admin_Models_API_Order
 	    		                         // 05: 台胞证；
 	    		                         // 06: 警官证；
 	    		                         // 07: 士兵证；
-	    		'CredentialsNo' => $order['credentials_no'], // 证件号码 String (18) 非空
+	    		'CredentialsNo' => $order['credentials_no'], // 证件号码 String (18) 非空 测试：410327199303067610'
 	    		'ShoppingDate' => date('Ymd',$order['pay_time']), // 订单交易（支付）日期 String(8) 非空 YYYYMMDD
 	    		'InternetDomainName' => 'www.1jiankang.com', // 电商平台互联网域名 String(512) 非空 电商平台的互联网域名。
 	    		                            // 以海关发布的对接电商平台域名列表为准。
@@ -5173,13 +5176,13 @@ class Admin_Models_API_Order
 	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案号，如果没有则填CbepComCode跨境电商平台企业备案号（国检）
 	    		'CbepMerName' => '国药（上海）电子商务有限公司', // 跨境电商交易商家备案名称（国检） String(48) 非空
 	    		                     // 入住跨境电商平台的商户在国检关口做企业备案，审核通过后的企业备案名称，如果没有则填CbepComNam跨境电商平台企业备案名称（国检）
-	    		'GoodsAmount' => sprintf ( "%012d", $order['price_goods']*100 ), // 货款 String(12) 非空
+	    		'GoodsAmount' => sprintf ( "%012d", $price_goods*100 ), // 货款 String(12) 非空
 	    		                     // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
-	    		'TaxAmount' => sprintf ( "%012d", $order['tax']*100 ), // 税款 String(12) 非空
+	    		'TaxAmount' => sprintf ( "%012d", $tax*100 ), // 税款 String(12) 非空
 	    		                   // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
-	    		'Freight' => sprintf ( "%012d", $order['price_logistic']*100 ), // 运费 String(12) 非空
+	    		'Freight' => '000000000000', // 运费 String(12) 非空
 	    		                 // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
-	    		'InsuredFee' => sprintf ( "%012d", $order['']*100 ), // 保费 String(12) 非空
+	    		'InsuredFee' => '000000000000', // 保费 String(12) 非空
 	    		                    // 格式：12位字符,最后2位为小数,形式为000000100000,代表1千元
 	    		'Mobile' => '', // 银行预留手机号码 String(11) 可空
 	    		'Email' => '', // 持卡人常用邮箱 String(32) 可空
@@ -5208,15 +5211,14 @@ class Admin_Models_API_Order
 	    );
 	    
 	    $xml_model = new Custom_Model_Xml ();
-	    //$xml_data = $this->arrayToXml ( $data);
-	    $xml_data = $xml_model->array2xml($data,'BODY');
+	    $xml_data = $this->arrayToXml ( $data);
+	    //$xml_data = $xml_model->array2xml($data,'BODY');
 	    
-	    $params = '<?xml version="1.0" encoding="gbk"?>
-	    <PACKAGE>
-	    ' . $xml_data . '
-	    </PACKAGE>';
+	    $params = '<?xml version="1.0" encoding="gbk"?><PACKAGE>'. $xml_data . '</PACKAGE>';
 	    
-	    $params = strlen($params).$params;
+	    $len = sprintf ( "%06d",strlen($params));
+	    $params = $len.$params;
+	    //echo $params;die();
 	    $base_len = 6;
 	    
 	    $socket = socket_create ( AF_INET, SOCK_STREAM, SOL_TCP ) or die ( "Could not create    socket\n" ); // 创建一个Socket
@@ -5228,6 +5230,7 @@ class Admin_Models_API_Order
 	    $output = socket_read ( $socket, $base_len + $ext_len );
 	    socket_close ( $socket );
 	    
+        var_dump($output);echo $params;die();
 	    $data = $xml_model->xml2array($output);
 	    var_dump($data);echo $params;die();
 	    //
@@ -5240,6 +5243,7 @@ class Admin_Models_API_Order
 	        if(is_array($val)){
 	            $xml.="<".$key.">".arrayToXml($val)."</".$key.">";
 	        }else{
+	            $val = iconv('UTF-8', 'GBK',$val);
 	            $xml.="<".$key.">".$val."</".$key.">";
 	        }
 	    }

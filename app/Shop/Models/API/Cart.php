@@ -1223,6 +1223,7 @@ class Shop_Models_API_Cart
       */
      public function getFareByWeight($name,$weight)
      {
+        return 0;
      	if($name == "sf"){
      		foreach($this->_fare as $k => $v){
      			$tmp = explode('-', $k);
