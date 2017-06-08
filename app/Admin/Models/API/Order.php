@@ -5112,7 +5112,7 @@ class Admin_Models_API_Order
 	function send_union_pay($batchSN)
 	{
 		$order = array_shift($this -> getOrderBatch(array('batch_sn' => $batchSN)));
-	    $env = 'test';
+	    $env = 'product';
 	    if ($env == 'test') {
 	    	// test
 	    	$host = "111.203.189.205";
@@ -5120,13 +5120,15 @@ class Admin_Models_API_Order
 	    	$MerID = '0P3';
 	    	$MerNo = '002172785100010';
 	    	$PayNo = '0P3000000000000';
+	    	$termid = '00904044';
 	    } else {
 	    	// product
-	    	$host = "";
-	    	$port = 0;
+	    	$host = "192.168.10.12";
+	    	$port = 6001;
 	    	$MerID = 'BZZ';
-	    	$MerNo = '';
+	    	$MerNo = '002148165100008';
 	    	$PayNo = 'BZZ000000000000';
+	    	$termid = '00000444';
 	    }
 	    
 	    $price_goods = round($order['price_order']/(1+0.119),0);
@@ -5142,7 +5144,7 @@ class Admin_Models_API_Order
 	    		'sysno' => '000000000000', // 银联支付单号 String(30) 非空 定值：000000000000（12位）
 	    		'cardno' => '0000000000000000000', // 卡号 String(19) 非空 定值：0000000000000000000（19位）
 	    		'traceno' => sprintf ( "%06d",$traceno), // 银联需求流水号 String(6) 非空 客户随机生成（6位长度，保证当天不唯一即可）
-	    		'termid' => '00904044', // 终端号 String(8) 非空 银联分配给客户（定值）
+	    		'termid' => $termid, // 终端号 String(8) 非空 银联分配给客户（定值）
 	    		'CurrCode' => '142', // 海关货币代码 String(3) 非空 海关货币代码(一般RMB为：142)
 	    		
 	    		'CurrCodeCIQ' => '156', // 国检货币代码 String(3) 非空 国检货币代码（一般RMB为：156）
@@ -5207,7 +5209,7 @@ class Admin_Models_API_Order
 	    		'CIQOrgCode' => '311500', // 检验检疫机构代码 String(8) 非空 详见国检机构代码表
 	    		'BusinessType' => 'B2C', // 业务类型 String(10) 非空 B2B2C或B2C
 	    		'CreTime' => date('YmdHis',strtotime($order['add_time'])), // 订单创建时间 String(14) 非空 YYYYMMDDHHmmss
-	    		'GetResultTime' => date('YmdHis',strtotime($order['pay_time'])),  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
+	    		'GetResultTime' => date('YmdHis',$order['pay_time']),  // 交易成功时间 String(14) 可空 YYYYMMDDHHmmss
 	    );
 	    
 	    $xml_model = new Custom_Model_Xml ();
@@ -5230,12 +5232,21 @@ class Admin_Models_API_Order
 	    $output = socket_read ( $socket, $base_len + $ext_len );
 	    socket_close ( $socket );
 	    
-        var_dump($output);echo $params;die();
-	    $data = $xml_model->xml2array($output);
-	    var_dump($data);echo $params;die();
-	    //
-	    $set = array();
-	    $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
+	    
+	    $db = Zend_Registry::get('db');
+	    $array = array(
+	            'content'=>json_encode(array("RES"=>$output,"DATA"=>$data)),
+	            'add_time'=>time(),
+	            'type'=>0);
+	    $db -> insert('log',$array);
+	    
+        
+	    $res = $xml_model->xml2array($output);
+	    if($res['PACKAGE']['BODY']['Code'] == '00'){
+	        //
+	        $set = array('sys_no'=>$res['PACKAGE']['BODY']['sysno']);
+	        $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
+	    }
 	} 
 	function arrayToXml($arr){
 	    $xml = "<BODY>";
