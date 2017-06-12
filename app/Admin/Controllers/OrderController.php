@@ -551,7 +551,6 @@ class Admin_OrderController extends Zend_Controller_Action
     {
         $pay_money = $this->_request->getParam('pay_money', '0.00');
         $batchSN = $this->_request->getParam('batch_sn', null);
-        //$this -> _api -> send_union_pay($batchSN);die();
         $orderDetail = $this -> _api -> orderDetail($batchSN);
         if ($orderDetail['finance']['status_return']) {
             $url = $this -> getFrontController() -> getBaseUrl() . "/admin/order/finance/batch_sn/{$batchSN}/jump/has-pay/";

@@ -5237,7 +5237,7 @@ class Admin_Models_API_Order
 	    $array = array(
 	            'content'=>json_encode(array("RES"=>$output,"DATA"=>$data)),
 	            'add_time'=>time(),
-	            'type'=>0);
+	            'type'=>1);
 	    $db -> insert('log',$array);
 	    
         
