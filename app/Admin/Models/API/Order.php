@@ -5129,10 +5129,11 @@ class Admin_Models_API_Order
 	    	$MerNo = '002148165100008';
 	    	$PayNo = 'BZZ000000000000';
 	    	$termid = '00000444';
+	    	//@exec("nohup ./vpn.sh &");
 	    }
 	    
 	    $price_goods = round($order['price_order']/(1+0.119),0);
-	    $tax = $order['price_order'] - $price_goods;
+	    $tax = bcsub($order['price_order'],$price_goods,2);
 	    $traceno = time()-strtotime(date('Y-m-d')).rand(1,9);
 	    $data = array (
 	    		'msgtype' => '0100', // 信息类型 定值 非空 定值：0100
@@ -5242,7 +5243,7 @@ class Admin_Models_API_Order
 	    
         
 	    $res = $xml_model->xml2array($output);
-	    if($res['PACKAGE']['BODY']['Code'] == '00'){
+	    if($res['PACKAGE']['BODY']['sysno']){
 	        //
 	        $set = array('sys_no'=>$res['PACKAGE']['BODY']['sysno']);
 	        $this -> _db -> updateOrderBatch(array('batch_sn' => $batchSN), $set);
