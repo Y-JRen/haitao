@@ -26,12 +26,12 @@ class Admin_Models_API_OMS
      * 原始订单推送接口 25
      * 应用场景：用户在电商商城下单，电商通知仓库根据订单发货。
      */
-    public function sendOMS($order)
+    public function sendOMS($order,$order_goods)
     {
         $data = array(
             "company_code"=>"NW2N554",    // 平台企业编码；String类型
             "company_name"=>"上海众馥实业有限公司",    // 平台企业名称；String类型
-            "order_id"=>"OrderId",    // 订单号；String类型，建议预留40位
+            "order_id"=>$order['order_sn'],    // 订单号；String类型，建议预留40位
             "order_create_time"=>"2014-11-06 16:16:20", // 下单时间；String类型
             "pay_time"=>"2014-11-06 16:16:20",  // 支付时间；String类型
             "shop_id"=>"", // 店铺id，非必填；String类型
