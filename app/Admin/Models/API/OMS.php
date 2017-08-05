@@ -35,7 +35,7 @@ class Admin_Models_API_OMS
             "order_create_time" => date('Y-m-d H:i:s',$order['add_time']), // 下单时间；String类型
             "pay_time" => date('Y-m-d H:i:s',$order['pay_time']),  // 支付时间；String类型
             "shop_id" => "", // 店铺id，非必填；String类型
-            "transport_service_code" => "EMS", //物流供应商代号，列表见附件；String类型
+            "transport_service_code" => strtoupper($order['logistic_code']), //物流供应商代号，列表见附件；String类型
             "transport_type" => "1",   // 物流类型：1:EMS快递包裹，2:EMS国内标准快递；String类型
             "transport_order_id" => $order['logistic_no'],   // 物流单号；String类型
             "receiver_zip" => "",             // 收货地邮编 非必填；String类型
