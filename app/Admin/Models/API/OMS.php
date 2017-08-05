@@ -26,80 +26,81 @@ class Admin_Models_API_OMS
      * 原始订单推送接口 25
      * 应用场景：用户在电商商城下单，电商通知仓库根据订单发货。
      */
-    public function sendOMS($order,$order_goods)
+    public function sendOMS($order,$goods)
     {
         $data = array(
-            "company_code"=>"NW2N554",    // 平台企业编码；String类型
-            "company_name"=>"上海众馥实业有限公司",    // 平台企业名称；String类型
-            "order_id"=>$order['order_sn'],    // 订单号；String类型，建议预留40位
-            "order_create_time"=>"2014-11-06 16:16:20", // 下单时间；String类型
-            "pay_time"=>"2014-11-06 16:16:20",  // 支付时间；String类型
-            "shop_id"=>"", // 店铺id，非必填；String类型
-            "transport_service_code"=>"EMS", //物流供应商代号，列表见附件；String类型
-            "transport_type"=>"1",   // 物流类型：1:EMS快递包裹，2:EMS国内标准快递；String类型
-            "transport_order_id"=>"qaws12345",   // 物流单号；String类型
-            "receiver_zip"=>"311251",             // 收货地邮编 非必填；String类型
-            "receiver_province"=>"浙江",	// 收货地省/州String类型
-            "receiver_city"=>"杭州",// 收货地城市 String类型
-            "receiver_county"=>"滨江区",// 收货地区String类型
-            "receiver_address"=>"浙江; 杭州; 滨江区;网商路599号",// 收货地地址 String类型
-            "receiver_name"=>"阿基米德",//收货人姓名 String类型
-            "receiver_mobile"=>"13777387619",// 收货人电话 String类型
-            "receiver_phone"=>"0571-12345678",// 收货人电话 String类型
-            "lotistic_mark"=>"杭州滨江",//快递公司大头笔，可空
-            "logistic_condition"=>"0",// 送达类型：0表示普通 1次日达
-            "senderName"=>"国药1健康",  //发件人姓名
-            "senderTel"=>"4006033883", //发件人电话
-            "senderCompanyName"=>"壹健康全球购", //发件方公司名称
-            "senderAddr"=>"上海市青浦区北青公路8228号3区8号", //发件人地址
-            "senderZip"=>"210000", //发件地邮编
-            "senderCity"=>"上海市", //发件地城市
-            "senderProvince"=>"上海市", //发件地省/州名
-            "senderCountry"=>"上海市", //发件地国家
-            "cargoDescript"=>"", //订单商品信息简述
-            "allCargoTotalPrice"=> 532.8, //商品价格, 保留5位小数, (商品集合中每个单项商品CargoTotalPrice 的合计值)说明：商品实际成交价,含非现金抵扣金额
-            "allCargoTotalTax"=> 53.28, //代扣税款, 保留5位小数, (商品集合中每个单项商品CargoTotalTax 的合计值)无费用值为0
-            "expressPrice"=> 25, //运杂费, 保留5位小数, 不包含在商品价格中的运杂费，无运费值为0
-            "otherPrice"=> 0, //非现金抵扣金额, 保留5位小数, 使用积分、虚拟货币、代金券等非现金支付金额(正值)，无则填写0
-            "recCountry"=>"中国", //收货地国家    --------新补充的 "serverType": "S02", //业务类型S01：一般进口S02：保税区进口 "custCode": "2238",  //海关关区代码
-            "operationCode"=>"1", //操作编码
-            "customDeclCo"=>"SHBX",//物流进境申报企业
-            "spt"=>"", //扩展字段                  --------新补充的
-            "payMethod"=>"GZYLWLZF", //支付方式
-            "payMerchantName"=>"广州银联网络支付有限公司", //企业支付名称, 支付企业在海关注册登记的企业名称
-            "payMerchantCode"=>"440131T001", //企业支付编号, 支付企业的海关注册登记编号
-            "payAmount"=> 611.08, //支付总金额, 保留5位小数，包括全部商品价格、代扣税款、运杂费、减去非现金抵扣金额
-            "payCUR"=>"142", //付款币种, 限定为人民币，填写“142”   "payID": "2014030120394812", //支付交易号
-            "payTime"=>"20071117020101" , //支付交易时间
-            "customs_release_method"=>"" , //放行状态：可自定义,如0拦截1放行，可空
-            "channel_id"=>"" , //订单渠道ID，可空
-            "channel_name"=>"" , //订单渠道名称，可空
-            "neutral_package"=>"0" , //包装类型：0贴标包装，1中性包装，2指定包装，3特殊订单，4其他
-            "insuredFee"=>"0", //保价费, 商品保险费用, 保留5位小数,无则填0
-            "buyerRegNo"=>"wm43225", //订购人注册号, 订购人的交易平台注册号,必填
-            "customerName"=>"王某", //订购人姓名,必填
-            "customerIdType"=>"1", //订购人证件类别, 默认‘1’身份证,必填
-            "customerId"=>"510265790128567", //订购人证件号,必填
-            "customerTel"=>"13600000000", //订购人电话,必填
-            "batchNumbers"=>"", //商品批次号
-            "assureCod"=>"3110966871",//担保扣税的企业海关注册登记编号，只限清单的电商平台企业、电商企业、物流企业,必填
-            "emsNo"=>"H22386000007",//保税模式必填，填写区内仓储企业在海关备案的账册编号，用于保税进口业务在特殊区域辅助系统记账（二线出区核减）,必填
-            "note"=>"", //备注
-            "version"=>"v2.0", //网关版本, 注意为小写字母,必填, 固定值：老版本v1.2总署版v2.0
-            "order_items"=>array(),
+            "company_code" => "NW2N554",    // 平台企业编码；String类型
+            "company_name" => "上海众馥实业有限公司",    // 平台企业名称；String类型
+            "order_id" => $order['order_sn'],    // 订单号；String类型，建议预留40位
+            "order_create_time" => date('Y-m-d H:i:s',$order['add_time']), // 下单时间；String类型
+            "pay_time" => date('Y-m-d H:i:s',$order['pay_time']),  // 支付时间；String类型
+            "shop_id" => "", // 店铺id，非必填；String类型
+            "transport_service_code" => "EMS", //物流供应商代号，列表见附件；String类型
+            "transport_type" => "1",   // 物流类型：1:EMS快递包裹，2:EMS国内标准快递；String类型
+            "transport_order_id" => $order['logistic_no'],   // 物流单号；String类型
+            "receiver_zip" => "",             // 收货地邮编 非必填；String类型
+            "receiver_province" => $order['addr_province'],	// 收货地省/州String类型
+            "receiver_city" => $order['addr_city'],// 收货地城市 String类型
+            "receiver_county" => $order['addr_area'],// 收货地区String类型
+            "receiver_address" => $order['addr_address'],// 收货地地址 String类型
+            "receiver_name" => $order['addr_consignee'],//收货人姓名 String类型
+            "receiver_mobile" => $order['addr_mobile'],// 收货人电话 String类型
+            "receiver_phone" => $order['addr_tel'],// 收货人电话 String类型
+            "lotistic_mark" => "",//快递公司大头笔，可空
+            "logistic_condition" => "0",// 送达类型：0表示普通 1次日达
+            "senderName" => "国药1健康",  //发件人姓名
+            "senderTel" => "4006033883", //发件人电话
+            "senderCompanyName" => "壹健康全球购", //发件方公司名称
+            "senderAddr" => "上海市青浦区北青公路8228号3区8号", //发件人地址
+            "senderZip" => "210000", //发件地邮编
+            "senderCity" => "上海市", //发件地城市
+            "senderProvince" => "上海市", //发件地省/州名
+            "senderCountry" => "上海市", //发件地国家
+            "cargoDescript" => "", //订单商品信息简述
+            "allCargoTotalPrice" =>  sprintf('%.5f',$order['']), //商品价格, 保留5位小数, (商品集合中每个单项商品CargoTotalPrice 的合计值)说明：商品实际成交价,含非现金抵扣金额
+            "allCargoTotalTax" =>  sprintf('%.5f',$order['']), //代扣税款, 保留5位小数, (商品集合中每个单项商品CargoTotalTax 的合计值)无费用值为0
+            "expressPrice" =>  sprintf('%.5f',$order['']), //运杂费, 保留5位小数, 不包含在商品价格中的运杂费，无运费值为0
+            "otherPrice" =>  0, //非现金抵扣金额, 保留5位小数, 使用积分、虚拟货币、代金券等非现金支付金额(正值)，无则填写0
+            "recCountry" => "中国", //收货地国家    --------新补充的 "serverType": "S02", //业务类型S01：一般进口S02：保税区进口 "custCode": "2238",  //海关关区代码
+            "operationCode" => "1", //操作编码
+            "customDeclCo" => "SHBX",//物流进境申报企业
+            "spt" => "", //扩展字段                  --------新补充的
+            "payMethod" => "GZYLWLZF", //支付方式
+            "payMerchantName" => "广州银联网络支付有限公司", //企业支付名称, 支付企业在海关注册登记的企业名称
+            "payMerchantCode" => "440131T001", //企业支付编号, 支付企业的海关注册登记编号
+            "payAmount" =>  sprintf('%.5f',$order['']), //支付总金额, 保留5位小数，包括全部商品价格、代扣税款、运杂费、减去非现金抵扣金额
+            "payCUR" => "142", //付款币种, 限定为人民币，填写“142”   "payID": "2014030120394812", //支付交易号
+            "payTime" => date('YmdHis',$order['pay_time']) , //支付交易时间
+            "customs_release_method" => "" , //放行状态：可自定义,如0拦截1放行，可空
+            "channel_id" => "" , //订单渠道ID，可空
+            "channel_name" => "" , //订单渠道名称，可空
+            "neutral_package" => "0" , //包装类型：0贴标包装，1中性包装，2指定包装，3特殊订单，4其他
+            "insuredFee" => "0", //保价费, 商品保险费用, 保留5位小数,无则填0
+            "buyerRegNo" => $order['addr_consignee'], //订购人注册号, 订购人的交易平台注册号,必填
+            "customerName" => $order['addr_consignee'], //订购人姓名,必填
+            "customerIdType" => $order['credentials_type'], //订购人证件类别, 默认‘1’身份证,必填
+            "customerId" => $order['credentials_no'], //订购人证件号,必填
+            "customerTel" => $order['addr_mobile'] ? $order['addr_mobile'] : $order['addr_tel'], //订购人电话,必填
+            "batchNumbers" => "", //商品批次号
+            "assureCod" => "3110966871",//担保扣税的企业海关注册登记编号，只限清单的电商平台企业、电商企业、物流企业,必填
+            "emsNo" => "H22386000007",//保税模式必填，填写区内仓储企业在海关备案的账册编号，用于保税进口业务在特殊区域辅助系统记账（二线出区核减）,必填
+            "note" => "", //备注
+            "version" => "v2.0", //网关版本, 注意为小写字母,必填, 固定值：老版本v1.2总署版v2.0
+            "order_items" => array(),
         );
-        foreach($a as $v){
+        foreach($goods as $v){
             $data['order_items'] = array(
-                "sku_id"=>"sku id", // sku_id
-                "qty"=>1000, // 数量
-                "cargoUnitPrice"=>177.60 ,  // 单项购买商品单价,数字串中保留5位小数, 赠品单价填写为0
-                "cargoTotalPrice"=>532.80, // 单项购买商品总价,数字串中保留5位小数， 同一编号商品总数总价,等于单价乘以数量
-                "cargoTotalTax"=>53.28, // 单项购买商品缴税总价,数字串中保留5位小数，同一编号商品总数备案价格对应的税金额 无费用值为0
+                "sku_id" => $v['product_sn'], // sku_id
+                "qty" => $v['number'], // 数量
+                "cargoUnitPrice"=>sprintf('%.5f',$v['']) ,  // 单项购买商品单价,数字串中保留5位小数, 赠品单价填写为0
+                "cargoTotalPrice"=>sprintf('%.5f',$v['']), // 单项购买商品总价,数字串中保留5位小数， 同一编号商品总数总价,等于单价乘以数量
+                "cargoTotalTax"=>sprintf('%.5f',$v['']), // 单项购买商品缴税总价,数字串中保留5位小数，同一编号商品总数备案价格对应的税金额 无费用值为0
                 "itemDescribe"=>"", // 交易平台销售商品的描述信息
                 "note"=>"" // 备注, 促销活动，商品单价偏离市场价格的，可以在此说明
             );
         }
         $response = $this->_sendOMS(25,$data);
+        var_dump($response);die();
     }
 
     public function sync($post)
