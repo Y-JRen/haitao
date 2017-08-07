@@ -26,7 +26,7 @@ class Admin_Models_API_OMS
      * 原始订单推送接口 25
      * 应用场景：用户在电商商城下单，电商通知仓库根据订单发货。
      */
-    public function sendOMS($order,$goods)
+    public function sendOMS($order)
     {
         $data = array(
             "company_code" => "NW2N554",    // 平台企业编码；String类型
@@ -88,7 +88,7 @@ class Admin_Models_API_OMS
             "version" => "v2.0", //网关版本, 注意为小写字母,必填, 固定值：老版本v1.2总署版v2.0
             "order_items" => array(),
         );
-        foreach($goods as $v){
+        foreach($order['goods'] as $v){
             $data['order_items'] = array(
                 "sku_id" => $v['product_sn'], // sku_id
                 "qty" => $v['number'], // 数量
