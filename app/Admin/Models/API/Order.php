@@ -4675,7 +4675,7 @@ class Admin_Models_API_Order
 	public function getOrderBatchInfoAndGoodsInfosByBatchId($order_batch_id)
 	{
 		if (false === ($order_info = $this->_db->getOrderBatchInfoByOrderBatchId($order_batch_id))) {
-			$this->_error = $this->_db->get_error();
+			//$this->_error = $this->_db->get_error();
 			return false;
 		}
 

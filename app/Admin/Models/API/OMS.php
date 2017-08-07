@@ -143,7 +143,7 @@ class Admin_Models_API_OMS
 
     protected function _sendOMS($notify_type,$data = array())
     {
-        $data = preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))",json_encode($str));
+        $data = preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))",json_encode($data));
         $sign = $this->sign($data);
 
         $post = array(
@@ -159,9 +159,10 @@ class Admin_Models_API_OMS
 
         $client = new Zend_Http_Client($this->url);
         $client->setParameterPost($post);
+		var_dump($post);die();
         $response = $client->request('POST');
-        $this->log($notify_type.' RESPONSE:'.json_encode($response).' RESQUEST:'.json_encode($post));
-        return $response;
+        $this->log($notify_type.' RESPONSE:'.json_encode($response->getBody()).' RESQUEST:'.json_encode($post));
+        return $response->getBody();
     }
 
     protected function check($post)
@@ -178,7 +179,7 @@ class Admin_Models_API_OMS
      * 加签
      */
     protected function sign($data){
-        return md5($data);
+        return strtoupper(md5($data));
     }
 
     /**

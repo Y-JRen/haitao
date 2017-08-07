@@ -1523,8 +1523,11 @@ class Admin_OrderController extends Zend_Controller_Action
     {
     	$sn = $this->_request->getParam('sn');
     	$orderApi = new Admin_Models_API_Order();
-    	$order = $orderApi->getOrderBatch(array('batch_sn' => $sn));
+    	$order = array_shift($orderApi->getOrderBatch(array('batch_sn' => $sn)));
     	$order_info = $orderApi->getOrderBatchInfoAndGoodsInfosByBatchId($order['order_batch_id']);
+		if(!$order_info){
+			die('121');
+		}
     	$omsApi = new Admin_Models_API_OMS();
     	$omsApi->sendOMS($order_info);
     }
