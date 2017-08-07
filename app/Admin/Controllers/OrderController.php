@@ -1518,5 +1518,15 @@ class Admin_OrderController extends Zend_Controller_Action
     	exit;
     }
     /*************跨境通测试Action   end***********************************************************************/
+    
+    public function omsSendAction()
+    {
+    	$sn = $this->_request->getParam('sn');
+    	$orderApi = new Admin_Models_API_Order();
+    	$order = $orderApi->getOrderBatch(array('batch_sn' => $batchSN));
+    	//$order_goods =
+    	$a = $orderApi->getOrderBatchInfoAndGoodsInfosByBatchId($order['order_batch_id']);
+    	var_dump($a);die();
+    }
 }
 
